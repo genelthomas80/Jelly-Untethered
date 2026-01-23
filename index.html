@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <title>Jelly Untethered</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -24,15 +29,23 @@
       margin: 0 auto;
       font-size: 1.1em;
     }
-    .fb-link {
-      margin-top: 25px;
-      display: inline-block;
-      padding: 12px 20px;
-      background: #1877f2;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
+    .social-title {
+      margin-top: 35px;
+      font-size: 1.2em;
+      font-weight: bold;
     }
+    .social-icons {
+      margin-top: 15px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 32px;
+      text-decoration: none;
+    }
+    .facebook { color: #1877f2; }
+    .instagram { color: #e1306c; }
+    .tiktok { color: #000000; }
+    .youtube { color: #ff0000; }
   </style>
 </head>
 
@@ -44,15 +57,40 @@
 
   <p>
     Solo travel. Cruises. Wandering the world without permission.
-    This is where the journey lives. Be sure to follow along on social media!
+    This is where the journey lives.
   </p>
 
-  <a class="fb-link"
-     href="https://www.facebook.com/jellyuntethered"
-     target="_blank">
-    
-     Follow Jelly Untethered on Facebook
-  </a>
+  <div class="social-title">Follow me on social</div>
+
+  <div class="social-icons">
+    <a class="facebook"
+       href="https://www.facebook.com/jellyuntethered"
+       target="_blank"
+       aria-label="Facebook">
+       <i class="fab fa-facebook"></i>
+    </a>
+
+    <a class="instagram"
+       href="https://www.instagram.com/jellyuntethered"
+       target="_blank"
+       aria-label="Instagram">
+       <i class="fab fa-instagram"></i>
+    </a>
+
+    <a class="tiktok"
+       href="https://www.tiktok.com/@jellyuntethered"
+       target="_blank"
+       aria-label="TikTok">
+       <i class="fab fa-tiktok"></i>
+    </a>
+
+    <a class="youtube"
+       href="https://www.youtube.com/@jellyuntethered"
+       target="_blank"
+       aria-label="YouTube">
+       <i class="fab fa-youtube"></i>
+    </a>
+  </div>
 
 </body>
 </html>
