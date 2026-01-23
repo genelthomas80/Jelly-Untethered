@@ -12,85 +12,143 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
       color: #333;
       text-align: center;
-      padding: 40px;
+      padding: 50px 20px;
     }
-    img {
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 2.5em;
-    }
-    p {
-      max-width: 600px;
+
+    .container {
+      max-width: 800px;
       margin: 0 auto;
-      font-size: 1.1em;
     }
+
+    img {
+      max-width: 260px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.7em;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+
+    .tagline {
+      font-size: 1.25em;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    .subtext {
+      margin-top: 10px;
+      color: #555;
+      font-size: 1.05em;
+      line-height: 1.5;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    hr.divider {
+      margin: 40px auto 25px;
+      width: 60px;
+      border: none;
+      height: 3px;
+      background: #ddd;
+      border-radius: 3px;
+    }
+
     .social-title {
-      margin-top: 35px;
-      font-size: 1.2em;
+      font-size: 1.15em;
       font-weight: bold;
+      margin-top: 0;
     }
+
     .social-icons {
       margin-top: 15px;
     }
+
     .social-icons a {
-      margin: 0 10px;
-      font-size: 32px;
+      display: inline-block;
+      margin: 0 12px;
+      font-size: 34px;
       text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
+
+    .social-icons a:hover {
+      transform: scale(1.15);
+      opacity: 0.85;
+    }
+
     .facebook { color: #1877f2; }
     .instagram { color: #e1306c; }
     .tiktok { color: #000000; }
     .youtube { color: #ff0000; }
+
+    .footer-note {
+      margin-top: 35px;
+      font-size: 0.95em;
+      color: #777;
+    }
   </style>
 </head>
 
 <body>
+  <div class="container">
 
-  <img src="logo.png" alt="Jelly Untethered logo">
+    <img src="logo.png" alt="Jelly Untethered logo">
 
-  <h1>Jelly Untethered</h1>
+    <h1>Jelly Untethered</h1>
 
-  <p>
-    Solo travel. Cruises. Wandering the world without permission.
-    This is where the journey lives.
-  </p>
+    <div class="tagline">
+      Solo travel. Cruises. Wandering without permission.
+    </div>
 
-  <div class="social-title">Follow me on social</div>
+    <div class="subtext">
+      Jelly Untethered is about movement, freedom, and choosing the road less planned.
+      More stories soon.
+    </div>
 
-  <div class="social-icons">
-    <a class="facebook"
-       href="https://www.facebook.com/jellyuntethered"
-       target="_blank"
-       aria-label="Facebook">
-       <i class="fab fa-facebook"></i>
-    </a>
+    <hr class="divider">
 
-    <a class="instagram"
-       href="https://www.instagram.com/jelly_untethered"
-       target="_blank"
-       aria-label="Instagram">
-       <i class="fab fa-instagram"></i>
-    </a>
+    <div class="social-title">Follow me on social</div>
 
-    <a class="tiktok"
-       href="https://www.tiktok.com/@jelly_untethered"
-       target="_blank"
-       aria-label="TikTok">
-       <i class="fab fa-tiktok"></i>
-    </a>
+    <div class="social-icons">
+      <a class="facebook"
+         href="https://www.facebook.com/jellyuntethered"
+         target="_blank"
+         aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
 
-    <a class="youtube"
-       href="https://www.youtube.com/@jellyuntethered"
-       target="_blank"
-       aria-label="YouTube">
-       <i class="fab fa-youtube"></i>
-    </a>
+      <a class="instagram"
+         href="https://www.instagram.com/jellyuntethered"
+         target="_blank"
+         aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a class="tiktok"
+         href="https://www.tiktok.com/@jellyuntethered"
+         target="_blank"
+         aria-label="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+
+      <a class="youtube"
+         href="https://www.youtube.com/@jellyuntethered"
+         target="_blank"
+         aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+
+    <div class="footer-note">
+      Currently untethering. Check back for new adventures.
+    </div>
+
   </div>
-
 </body>
 </html>
