@@ -49,7 +49,7 @@
     .intro {
       text-align: center;
       margin: 14px auto 0;
-      max-width: 720px;
+      max-width: 780px;
       color: #555;
       line-height: 1.5;
       font-size: 1.05em;
@@ -65,7 +65,7 @@
     }
 
     .trip {
-      background: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.75);
       border: 1px solid #e6e6e6;
       border-radius: 14px;
       padding: 18px 18px 10px;
@@ -107,10 +107,10 @@
       margin: 0;
     }
 
-    /* Responsive grid */
     @media (max-width: 900px) {
       .gallery { grid-template-columns: repeat(2, 1fr); }
     }
+
     @media (max-width: 560px) {
       .gallery { grid-template-columns: 1fr; }
       body { padding: 36px 16px; }
@@ -148,8 +148,9 @@
     .tip {
       font-size: 0.95em;
       color: #666;
-      margin-top: 10px;
+      margin: 10px auto 0;
       text-align: center;
+      max-width: 900px;
     }
 
     code {
@@ -172,77 +173,605 @@
 
     <h1>Journeys</h1>
     <div class="intro">
-      A place for the highlights, the chaos, the beauty, and the “how did I end up here?” moments.
-      Photos + real captions. No stock-photo energy.
+      Highlights from past trips, with captions that tell the truth.
+      Replace the image filenames when you’re ready. Your camera roll is doing its best.
     </div>
 
     <hr class="divider">
 
     <div class="tip">
-      Photo tip: put your images in <code>images/journeys/</code> and update the <code>src</code> paths below.
+      Put your images in <code>images/journeys/</code>. Then update each <code>src</code> like
+      <code>images/journeys/puerto-vallarta-2007-01.jpg</code>.
     </div>
 
-    <!-- TRIP 1 -->
+    <!-- 2007: Puerto Vallarta, Mexico -->
     <section class="trip">
       <div class="trip-header">
-        <h2 class="trip-title">Trip Name Here</h2>
-        <p class="trip-meta">Location • Month Year</p>
+        <h2 class="trip-title">Puerto Vallarta, Mexico</h2>
+        <p class="trip-meta">2007</p>
       </div>
 
       <p class="trip-notes">
-        Optional: 1–2 sentences about this trip. Example: “This was the trip where I learned
-        I can survive on espresso and pure spite.”
+        Sun, salt air, and the early days of me realizing I’m not built for staying put.
       </p>
 
       <div class="gallery">
         <figure>
-          <img src="images/journeys/trip1-photo1.jpg" alt="Trip 1 photo 1">
-          <figcaption>Caption goes here. Keep it real. Funny is allowed.</figcaption>
+          <img src="images/journeys/puerto-vallarta-2007-01.jpg" alt="Puerto Vallarta 2007 photo 1">
+          <figcaption>Caption: beach vibes, questionable decisions, zero regrets.</figcaption>
         </figure>
-
         <figure>
-          <img src="images/journeys/trip1-photo2.jpg" alt="Trip 1 photo 2">
-          <figcaption>Another caption. What is happening in this photo?</figcaption>
+          <img src="images/journeys/puerto-vallarta-2007-02.jpg" alt="Puerto Vallarta 2007 photo 2">
+          <figcaption>Caption: proof I went outside and touched sunshine.</figcaption>
         </figure>
-
         <figure>
-          <img src="images/journeys/trip1-photo3.jpg" alt="Trip 1 photo 3">
-          <figcaption>Third caption. This is where you humblebrag tastefully.</figcaption>
+          <img src="images/journeys/puerto-vallarta-2007-03.jpg" alt="Puerto Vallarta 2007 photo 3">
+          <figcaption>Caption: the view did all the work here.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/puerto-vallarta-2007-04.jpg" alt="Puerto Vallarta 2007 photo 4">
+          <figcaption>Caption: I was relaxed. Rare. Documented.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/puerto-vallarta-2007-05.jpg" alt="Puerto Vallarta 2007 photo 5">
+          <figcaption>Caption: Mexico understood the assignment.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/puerto-vallarta-2007-06.jpg" alt="Puerto Vallarta 2007 photo 6">
+          <figcaption>Caption: would return. Would also eat everything again.</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- TRIP 2 -->
+    <!-- 2008: Iceland -->
     <section class="trip">
       <div class="trip-header">
-        <h2 class="trip-title">Another Trip Name</h2>
-        <p class="trip-meta">Location • Month Year</p>
+        <h2 class="trip-title">Iceland</h2>
+        <p class="trip-meta">2008</p>
       </div>
 
       <p class="trip-notes">
-        Optional: a quick note about the vibe or what made it memorable.
+        Waterfalls, drama in the sky, and landscapes that make you question why you ever lived anywhere else.
       </p>
 
       <div class="gallery">
         <figure>
-          <img src="images/journeys/trip2-photo1.jpg" alt="Trip 2 photo 1">
-          <figcaption>Caption for this photo.</figcaption>
+          <img src="images/journeys/iceland-2008-01.jpg" alt="Iceland 2008 photo 1">
+          <figcaption>Caption: nature showing off, as usual.</figcaption>
         </figure>
-
         <figure>
-          <img src="images/journeys/trip2-photo2.jpg" alt="Trip 2 photo 2">
-          <figcaption>Caption for this photo.</figcaption>
+          <img src="images/journeys/iceland-2008-02.jpg" alt="Iceland 2008 photo 2">
+          <figcaption>Caption: the wind was rude, but the view was worth it.</figcaption>
         </figure>
-
         <figure>
-          <img src="images/journeys/trip2-photo3.jpg" alt="Trip 2 photo 3">
-          <figcaption>Caption for this photo.</figcaption>
+          <img src="images/journeys/iceland-2008-03.jpg" alt="Iceland 2008 photo 3">
+          <figcaption>Caption: if this is a waterfall, I’m a lifelong fan.</figcaption>
         </figure>
+        <figure>
+          <img src="images/journeys/iceland-2008-04.jpg" alt="Iceland 2008 photo 4">
+          <figcaption>Caption: Iceland: 10/10, emotionally destabilizing in the best way.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2008: Vermont -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Vermont</h2>
+        <p class="trip-meta">2008</p>
+      </div>
+
+      <p class="trip-notes">
+        Cozy scenery, quiet roads, and the kind of calm that makes your nervous system unclench.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/journeys/vermont-2008-01.jpg" alt="Vermont 2008 photo 1">
+          <figcaption>Caption: small-town peace, big-time healing.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/vermont-2008-02.jpg" alt="Vermont 2008 photo 2">
+          <figcaption>Caption: this is where I pretended I live in a Hallmark movie.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/vermont-2008-03.jpg" alt="Vermont 2008 photo 3">
+          <figcaption>Caption: nature doing Vermont things.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/vermont-2008-04.jpg" alt="Vermont 2008 photo 4">
+          <figcaption>Caption: the air felt expensive. No notes.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2009: Grand Canyon -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Grand Canyon</h2>
+        <p class="trip-meta">2009</p>
+      </div>
+
+      <p class="trip-notes">
+        Pictures don’t do it justice. Humans are tiny. The canyon is not.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/journeys/grand-canyon-2009-01.jpg" alt="Grand Canyon 2009 photo 1">
+          <figcaption>Caption: I stood there and immediately needed to humble myself.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/grand-canyon-2009-02.jpg" alt="Grand Canyon 2009 photo 2">
+          <figcaption>Caption: the scale is offensive.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/grand-canyon-2009-03.jpg" alt="Grand Canyon 2009 photo 3">
+          <figcaption>Caption: yes, I took 400 photos. No, I will not apologize.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/grand-canyon-2009-04.jpg" alt="Grand Canyon 2009 photo 4">
+          <figcaption>Caption: if awe had a zip code, it’s here.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2010: Europe (Amsterdam, Belgium, Germany, Luxembourg) -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Europe Adventure</h2>
+        <p class="trip-meta">Amsterdam • Belgium • Germany • Luxembourg • 2010</p>
+      </div>
+
+      <p class="trip-notes">
+        A multi-country sprint where I learned two things: I love old streets, and I will always choose the wander.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/journeys/europe-2010-01.jpg" alt="Europe 2010 photo 1">
+          <figcaption>Caption: canals, cobblestones, and me pretending I’m local.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-02.jpg" alt="Europe 2010 photo 2">
+          <figcaption>Caption: architecture that casually outclasses everything.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-03.jpg" alt="Europe 2010 photo 3">
+          <figcaption>Caption: one of those “I can’t believe this is real” moments.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-04.jpg" alt="Europe 2010 photo 4">
+          <figcaption>Caption: walking until my feet filed a complaint.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-05.jpg" alt="Europe 2010 photo 5">
+          <figcaption>Caption: the food was personal. Like it knew me.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-06.jpg" alt="Europe 2010 photo 6">
+          <figcaption>Caption: postcard energy, but make it real life.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-07.jpg" alt="Europe 2010 photo 7">
+          <figcaption>Caption: I was thriving. Quietly, but aggressively.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-08.jpg" alt="Europe 2010 photo 8">
+          <figcaption>Caption: if “take me back” had a photo.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-09.jpg" alt="Europe 2010 photo 9">
+          <figcaption>Caption: wandered into this, never left emotionally.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-10.jpg" alt="Europe 2010 photo 10">
+          <figcaption>Caption: Germany doing Germany things: efficient and gorgeous.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-11.jpg" alt="Europe 2010 photo 11">
+          <figcaption>Caption: Luxembourg: tiny country, big charm.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-12.jpg" alt="Europe 2010 photo 12">
+          <figcaption>Caption: another day, another “I’m lucky” moment.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-13.jpg" alt="Europe 2010 photo 13">
+          <figcaption>Caption: someone tell my job I’m busy living.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-14.jpg" alt="Europe 2010 photo 14">
+          <figcaption>Caption: streets like this should be illegal.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-15.jpg" alt="Europe 2010 photo 15">
+          <figcaption>Caption: I ate, I walked, I repeated. Perfect system.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-16.jpg" alt="Europe 2010 photo 16">
+          <figcaption>Caption: the kind of view that shuts your brain off.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-17.jpg" alt="Europe 2010 photo 17">
+          <figcaption>Caption: Belgium understood my need for cozy.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-18.jpg" alt="Europe 2010 photo 18">
+          <figcaption>Caption: this is where I started plotting future trips.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-19.jpg" alt="Europe 2010 photo 19">
+          <figcaption>Caption: “one more photo” said me, 200 times.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/europe-2010-20.jpg" alt="Europe 2010 photo 20">
+          <figcaption>Caption: leaving was rude. I did it anyway.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2010: Iceland -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Iceland</h2>
+        <p class="trip-meta">2010</p>
+      </div>
+
+      <p class="trip-notes">
+        Returning to Iceland is not “repeating a trip.” It’s called having taste.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/journeys/iceland-2010-01.jpg" alt="Iceland 2010 photo 1">
+          <figcaption>Caption: still dramatic. Still perfect.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/iceland-2010-02.jpg" alt="Iceland 2010 photo 2">
+          <figcaption>Caption: I came back for this exact feeling.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/iceland-2010-03.jpg" alt="Iceland 2010 photo 3">
+          <figcaption>Caption: wind: 1, hair: 0.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/iceland-2010-04.jpg" alt="Iceland 2010 photo 4">
+          <figcaption>Caption: the landscape is basically a flex.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/iceland-2010-05.jpg" alt="Iceland 2010 photo 5">
+          <figcaption>Caption: if peace had a background image.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/iceland-2010-06.jpg" alt="Iceland 2010 photo 6">
+          <figcaption>Caption: “I should move here” thoughts: recurring.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2012: Iceland -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Iceland</h2>
+        <p class="trip-meta">2012</p>
+      </div>
+
+      <p class="trip-notes">
+        Yes, again. Some people collect shoes. I collect Iceland.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/journeys/iceland-2012-01.jpg" alt="Iceland 2012 photo 1">
+          <figcaption>Caption: Iceland staying iconic.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/iceland-2012-02.jpg" alt="Iceland 2012 photo 2">
+          <figcaption>Caption: the sky did the most.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/iceland-2012-03.jpg" alt="Iceland 2012 photo 3">
+          <figcaption>Caption: I swear it looks edited. It wasn’t.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/iceland-2012-04.jpg" alt="Iceland 2012 photo 4">
+          <figcaption>Caption: more waterfalls. More healing.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/iceland-2012-05.jpg" alt="Iceland 2012 photo 5">
+          <figcaption>Caption: standing here fixed something in me.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/iceland-2012-06.jpg" alt="Iceland 2012 photo 6">
+          <figcaption>Caption: would return. Again. Obviously.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2012: Seattle, Washington -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Seattle, Washington</h2>
+        <p class="trip-meta">2012</p>
+      </div>
+
+      <p class="trip-notes">
+        Coffee, moody skies, and a city that looks like it listens to indie music on purpose.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/journeys/seattle-2012-01.jpg" alt="Seattle 2012 photo 1">
+          <figcaption>Caption: the weather is a personality trait here.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/seattle-2012-02.jpg" alt="Seattle 2012 photo 2">
+          <figcaption>Caption: coffee: yes. Always yes.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/seattle-2012-03.jpg" alt="Seattle 2012 photo 3">
+          <figcaption>Caption: skyline doing skyline things.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/seattle-2012-04.jpg" alt="Seattle 2012 photo 4">
+          <figcaption>Caption: I could absolutely live here (temporarily, dramatically).</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/seattle-2012-05.jpg" alt="Seattle 2012 photo 5">
+          <figcaption>Caption: this photo smells like rain.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/seattle-2012-06.jpg" alt="Seattle 2012 photo 6">
+          <figcaption>Caption: I left, but I still think about it.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2014: Yellowstone & Grand Teton National Parks -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Yellowstone & Grand Teton National Parks</h2>
+        <p class="trip-meta">Wyoming • 2014</p>
+      </div>
+
+      <p class="trip-notes">
+        Wild, massive, and humbling. Also, the animals do not care about your schedule.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/journeys/yellowstone-tetons-2014-01.jpg" alt="Yellowstone and Tetons 2014 photo 1">
+          <figcaption>Caption: nature said “watch this.”</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/yellowstone-tetons-2014-02.jpg" alt="Yellowstone and Tetons 2014 photo 2">
+          <figcaption>Caption: yes, it really looked like that.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/yellowstone-tetons-2014-03.jpg" alt="Yellowstone and Tetons 2014 photo 3">
+          <figcaption>Caption: I stared too long. Worth it.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/yellowstone-tetons-2014-04.jpg" alt="Yellowstone and Tetons 2014 photo 4">
+          <figcaption>Caption: this is where I stopped rushing and started noticing.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/yellowstone-tetons-2014-05.jpg" alt="Yellowstone and Tetons 2014 photo 5">
+          <figcaption>Caption: Yellowstone: chaotic good.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/yellowstone-tetons-2014-06.jpg" alt="Yellowstone and Tetons 2014 photo 6">
+          <figcaption>Caption: Tetons: sharp, stunning, and unapologetic.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/yellowstone-tetons-2014-07.jpg" alt="Yellowstone and Tetons 2014 photo 7">
+          <figcaption>Caption: if peace had a trailhead.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/yellowstone-tetons-2014-08.jpg" alt="Yellowstone and Tetons 2014 photo 8">
+          <figcaption>Caption: I became a National Parks person right here.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/yellowstone-tetons-2014-09.jpg" alt="Yellowstone and Tetons 2014 photo 9">
+          <figcaption>Caption: the kind of day that rewires you.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/yellowstone-tetons-2014-10.jpg" alt="Yellowstone and Tetons 2014 photo 10">
+          <figcaption>Caption: I left better than I arrived. That’s the point.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Glacier National Park (year not provided) -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Glacier National Park</h2>
+        <p class="trip-meta">Montana • Year TBD</p>
+      </div>
+
+      <p class="trip-notes">
+        Add the year when you remember it. You were busy being awestruck.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/journeys/glacier-01.jpg" alt="Glacier National Park photo 1">
+          <figcaption>Caption: Glacier doesn’t do “subtle.”</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/glacier-02.jpg" alt="Glacier National Park photo 2">
+          <figcaption>Caption: views so good they feel fake.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/glacier-03.jpg" alt="Glacier National Park photo 3">
+          <figcaption>Caption: I took this and immediately needed silence.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/glacier-04.jpg" alt="Glacier National Park photo 4">
+          <figcaption>Caption: the air here is basically therapy.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/glacier-05.jpg" alt="Glacier National Park photo 5">
+          <figcaption>Caption: I’d go back tomorrow.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/glacier-06.jpg" alt="Glacier National Park photo 6">
+          <figcaption>Caption: mountains: loud. me: grateful.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/glacier-07.jpg" alt="Glacier National Park photo 7">
+          <figcaption>Caption: this is why I keep leaving home.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/glacier-08.jpg" alt="Glacier National Park photo 8">
+          <figcaption>Caption: another “I’m tiny” reminder.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/glacier-09.jpg" alt="Glacier National Park photo 9">
+          <figcaption>Caption: I will never be over this.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/glacier-10.jpg" alt="Glacier National Park photo 10">
+          <figcaption>Caption: file under: proof joy is real.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2023: Jackson Hole, Wyoming -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Jackson Hole</h2>
+        <p class="trip-meta">Wyoming • 2023</p>
+      </div>
+
+      <p class="trip-notes">
+        Mountain town energy: cozy, bold, and slightly too pretty to be legal.
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/journeys/jackson-hole-2023-01.jpg" alt="Jackson Hole 2023 photo 1">
+          <figcaption>Caption: “I should move here” thoughts: immediate.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/jackson-hole-2023-02.jpg" alt="Jackson Hole 2023 photo 2">
+          <figcaption>Caption: the kind of air you want to bottle.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/jackson-hole-2023-03.jpg" alt="Jackson Hole 2023 photo 3">
+          <figcaption>Caption: if this is a screen saver, I’m okay with that.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/jackson-hole-2023-04.jpg" alt="Jackson Hole 2023 photo 4">
+          <figcaption>Caption: me, being calm. suspicious but true.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/journeys/jackson-hole-2023-05.jpg" alt="Jackson Hole 2023 photo 5">
+          <figcaption>Caption: mountains solving problems I didn’t name.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Pacific Coast Highway Road Trip (year not provided) -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Pacific Coast Highway Road Trip</h2>
+        <p class="trip-meta">California • Year TBD</p>
+      </div>
+
+      <p class="trip-notes">
+        Ocean on one side, cliffs on the other, and me acting like the main character (correctly).
+      </p>
+
+      <div class="gallery">
+        <figure><img src="images/journeys/pch-01.jpg" alt="PCH photo 1"><figcaption>Caption: pulled over for “just one more view” 37 times.</figcaption></figure>
+        <figure><img src="images/journeys/pch-02.jpg" alt="PCH photo 2"><figcaption>Caption: California knows what it’s doing.</figcaption></figure>
+        <figure><img src="images/journeys/pch-03.jpg" alt="PCH photo 3"><figcaption>Caption: ocean therapy, no copay.</figcaption></figure>
+        <figure><img src="images/journeys/pch-04.jpg" alt="PCH photo 4"><figcaption>Caption: yes, I stopped for this photo. obviously.</figcaption></figure>
+        <figure><img src="images/journeys/pch-05.jpg" alt="PCH photo 5"><figcaption>Caption: proof I was living, not just existing.</figcaption></figure>
+        <figure><img src="images/journeys/pch-06.jpg" alt="PCH photo 6"><figcaption>Caption: coastal chaos, but make it beautiful.</figcaption></figure>
+        <figure><img src="images/journeys/pch-07.jpg" alt="PCH photo 7"><figcaption>Caption: my favorite kind of road: scenic and petty.</figcaption></figure>
+        <figure><img src="images/journeys/pch-08.jpg" alt="PCH photo 8"><figcaption>Caption: I would like to stay here forever, thanks.</figcaption></figure>
+        <figure><img src="images/journeys/pch-09.jpg" alt="PCH photo 9"><figcaption>Caption: golden hour doing the most.</figcaption></figure>
+        <figure><img src="images/journeys/pch-10.jpg" alt="PCH photo 10"><figcaption>Caption: windows down, brain quiet.</figcaption></figure>
+        <figure><img src="images/journeys/pch-11.jpg" alt="PCH photo 11"><figcaption>Caption: this is why I chase roads.</figcaption></figure>
+        <figure><img src="images/journeys/pch-12.jpg" alt="PCH photo 12"><figcaption>Caption: trip ended. heart didn’t.</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 2025: Mediterranean Cruise -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Mediterranean Cruise</h2>
+        <p class="trip-meta">Europe • 2025</p>
+      </div>
+
+      <p class="trip-notes">
+        The Mediterranean is basically a flex. I was just lucky enough to be nearby.
+      </p>
+
+      <div class="gallery">
+        <figure><img src="images/journeys/med-cruise-2025-01.jpg" alt="Mediterranean Cruise 2025 photo 1"><figcaption>Caption: salt air and serotonin.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-02.jpg" alt="Mediterranean Cruise 2025 photo 2"><figcaption>Caption: streets older than my problems.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-03.jpg" alt="Mediterranean Cruise 2025 photo 3"><figcaption>Caption: if this is “too much,” I want more.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-04.jpg" alt="Mediterranean Cruise 2025 photo 4"><figcaption>Caption: I will never be normal about this view.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-05.jpg" alt="Mediterranean Cruise 2025 photo 5"><figcaption>Caption: gelato. always.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-06.jpg" alt="Mediterranean Cruise 2025 photo 6"><figcaption>Caption: I walked until my soul felt quieter.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-07.jpg" alt="Mediterranean Cruise 2025 photo 7"><figcaption>Caption: the sea understood me.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-08.jpg" alt="Mediterranean Cruise 2025 photo 8"><figcaption>Caption: this is what “untethered” looks like.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-09.jpg" alt="Mediterranean Cruise 2025 photo 9"><figcaption>Caption: I took this, then just… stared.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-10.jpg" alt="Mediterranean Cruise 2025 photo 10"><figcaption>Caption: the kind of day you remember forever.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-11.jpg" alt="Mediterranean Cruise 2025 photo 11"><figcaption>Caption: my camera roll was thriving.</figcaption></figure>
+        <figure><img src="images/journeys/med-cruise-2025-12.jpg" alt="Mediterranean Cruise 2025 photo 12"><figcaption>Caption: leaving was disrespectful.</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 2025: Bahamas & Caribbean Cruise -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Bahamas & Caribbean Cruise</h2>
+        <p class="trip-meta">2025</p>
+      </div>
+
+      <p class="trip-notes">
+        Warm water, bright skies, and the kind of relaxation you can’t fake in a spreadsheet.
+      </p>
+
+      <div class="gallery">
+        <figure><img src="images/journeys/caribbean-2025-01.jpg" alt="Bahamas and Caribbean 2025 photo 1"><figcaption>Caption: ocean: yes. stress: no.</figcaption></figure>
+        <figure><img src="images/journeys/caribbean-2025-02.jpg" alt="Bahamas and Caribbean 2025 photo 2"><figcaption>Caption: the color of this water is honestly rude.</figcaption></figure>
+        <figure><img src="images/journeys/caribbean-2025-03.jpg" alt="Bahamas and Caribbean 2025 photo 3"><figcaption>Caption: I could live like this. financially? we’ll see.</figcaption></figure>
+        <figure><img src="images/journeys/caribbean-2025-04.jpg" alt="Bahamas and Caribbean 2025 photo 4"><figcaption>Caption: sun on my face, brain finally quiet.</figcaption></figure>
+        <figure><img src="images/journeys/caribbean-2025-05.jpg" alt="Bahamas and Caribbean 2025 photo 5"><figcaption>Caption: a perfect day, suspiciously easy.</figcaption></figure>
+        <figure><img src="images/journeys/caribbean-2025-06.jpg" alt="Bahamas and Caribbean 2025 photo 6"><figcaption>Caption: I want to go back already.</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 2025: Bend, Oregon -->
+    <section class="trip">
+      <div class="trip-header">
+        <h2 class="trip-title">Bend, Oregon</h2>
+        <p class="trip-meta">2025</p>
+      </div>
+
+      <p class="trip-notes">
+        Mountains, rivers, and that crisp “I could restart my life here” energy.
+      </p>
+
+      <div class="gallery">
+        <figure><img src="images/journeys/bend-2025-01.jpg" alt="Bend 2025 photo 1"><figcaption>Caption: Bend is outdoorsy in a way that feels personal.</figcaption></figure>
+        <figure><img src="images/journeys/bend-2025-02.jpg" alt="Bend 2025 photo 2"><figcaption>Caption: fresh air and a quiet brain. rare combo.</figcaption></figure>
+        <figure><img src="images/journeys/bend-2025-03.jpg" alt="Bend 2025 photo 3"><figcaption>Caption: I walked around like I belonged here. I did.</figcaption></figure>
+        <figure><img src="images/journeys/bend-2025-04.jpg" alt="Bend 2025 photo 4"><figcaption>Caption: nature doing Oregon things: showing off.</figcaption></figure>
+        <figure><img src="images/journeys/bend-2025-05.jpg" alt="Bend 2025 photo 5"><figcaption>Caption: this is what “reset” looks like.</figcaption></figure>
+        <figure><img src="images/journeys/bend-2025-06.jpg" alt="Bend 2025 photo 6"><figcaption>Caption: would return. would stay longer.</figcaption></figure>
       </div>
     </section>
 
     <div class="footer-note">
-      More trips coming as I dig through my camera roll like an archaeologist of poor life choices.
+      Next: swap in your real image filenames, and edit captions to match what actually happened.
+      The truth is the whole point.
     </div>
 
   </div>
