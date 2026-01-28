@@ -5,7 +5,7 @@
   <title>About Me | Jelly Untethered</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font Awesome (optional but keeps things consistent) -->
+  <!-- Font Awesome (optional) -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -13,53 +13,94 @@
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
-      color: #333;
-      padding: 50px 20px;
+      color: #111827;
+      padding: 52px 18px;
+      margin: 0;
+      text-align: center;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
-      text-align: center;
     }
 
     nav {
-      margin-bottom: 30px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-bottom: 26px;
     }
 
     nav a {
-      margin: 0 15px;
+      color: #4b5563;
       text-decoration: none;
-      font-weight: bold;
-      color: #555;
+      font-weight: 800;
+      padding: 8px 10px;
+      border-radius: 12px;
+      transition: background 0.15s ease, transform 0.15s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      background: rgba(0,0,0,0.05);
+      transform: translateY(-1px);
     }
 
     h1 {
-      font-size: 2.4em;
-      margin-bottom: 25px;
+      font-size: clamp(2rem, 2.6vw, 2.7rem);
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+
+    .subhead {
+      margin: 12px auto 0;
+      max-width: 820px;
+      color: #6b7280;
+      line-height: 1.75;
+      font-size: 1.06rem;
+    }
+
+    .divider {
+      margin: 28px auto 26px;
+      width: 86px;
+      height: 4px;
+      background: #d1d5db;
+      border-radius: 999px;
+      border: none;
+    }
+
+    .card {
+      max-width: 860px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+      padding: 28px 24px;
+      text-align: left;
+      backdrop-filter: blur(7px);
     }
 
     .about-text {
-      text-align: left;
-      font-size: 1.05em;
-      line-height: 1.6;
-      color: #444;
+      font-size: 1.06rem;
+      line-height: 1.8;
+      color: #374151;
     }
 
     .about-text p {
-      margin-bottom: 18px;
+      margin: 0 0 16px;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
     }
 
     .footer-note {
-      margin-top: 40px;
-      font-size: 0.95em;
-      color: #777;
+      margin-top: 18px;
+      font-size: 0.95rem;
+      color: #6b7280;
       text-align: center;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -76,67 +117,86 @@
     </nav>
 
     <h1>About Me</h1>
+    <div class="subhead">
+      A little background on the person behind Jelly Untethered.
+    </div>
 
-    <div class="about-text">
-      <p>
-        Hi, I’m Genel and my nickname is Jelly. I’m <strong>45 years old</strong>, and lived the majority of my life in Massachusetts.</strong>,
-        I am single. Divorced single. Not it's complicated, single. Not, I have a FWB single. No mystery, not dramatic. Just honest. Honest to a fault some might say.
-      </p>
+    <hr class="divider">
 
-      <p>
-        For most of my adult life, I did what I was supposed to do. Went to college, earned a degree, paid off my loans, got married, built a career,
-        bought a house, adopted many pets, earned a graduate degree and advanced certification in my field. I showed up. Stayed loyal. Played responsible human. 
-        It worked… until it didn’t.
-      </p>
+    <section class="card">
+      <div class="about-text">
 
-      <p>
-        First, the divorce, then unexpected changes at work and a growing sense that my
-        life was getting smaller instead of bigger. I hit a wall I couldn’t ignore.
-        Burnout showed up. Restlessness followed. And the question “Is this really it?”
-        refused to leave. Life felt like a series of repeated actions, and I was a hamster on the wheel in my cage.
-        Constantly running, but was I really going anywhere?
-      </p>
+        <p>
+          Hi, I’m Genel. Most people call me Jelly. I’m 45 years old and spent the majority of my life in Massachusetts.
+          I’m single. Divorced single. Not “it’s complicated” single. Not “we’re friends but also sleeping together” single.
+          Just… single. Honest. Possibly too honest, depending who you ask.
+        </p>
 
-      <p>
-        So instead of buying another couch, pretending a vacation would fix
-        everything, or picking up a drug habit, I made a bigger decision.
-      </p>
+        <p>
+          For most of my adult life, I did exactly what I was supposed to do. I went to college, earned a degree, paid off my loans,
+          got married, built a career, bought a house, adopted many pets, earned a graduate degree, and advanced certifications in my field.
+          I showed up. I stayed loyal. I played responsible human very well.
+        </p>
 
-      <p>
-        I resigned from my job in January 2026 after twenty years of dedication and hard work.
-        Twenty years in the same business, helping to grow it into the successful business it is now. 
-        That business was my identity. I was proud of what I helped to create. While I don't regret a moment and am still
-        proud. I see now that my career never should have been that much of my identity. There is more to life than just work.
-      </p>
+        <p>
+          It worked… until it didn’t.
+        </p>
 
-      <p>
-        I had no idea what was next. I had no job and no income. So I did the most logical thing a girl could do, 
-        I decided to take a vacation to regroup and figure out my next steps. I logged into my Holland America account
-        to see if I had any offers for an inexpensive cruise. Low and behold, I had many. Before I knew it, my 
-        one-week vacation plan was two weeks, then a month, then 3 month, etc. Before I knew it, I had a six-month
-        itinerary planned out. I sat with this for a couple of days, looked at logistics and costs and compared to 
-        current bills of rent, groceries, utilities, snow plowing service, etc and I found it would be less expensive to 
-        live on a cruise ship than to maintain my apartment.
-      </p>
+        <p>
+          First came the divorce. Then unexpected changes at work. Then the quiet, uncomfortable realization that my life was getting smaller
+          instead of bigger. Burnout showed up uninvited. Restlessness followed. And the question <em>“Is this really it?”</em> refused to leave.
+          Life began to feel like a series of repeated motions. I was running hard, constantly in motion, but not actually going anywhere.
+        </p>
 
-      <p>
-        So, I made the decision to give notice to my landlord and travel the world over the next year.
-      </p>
-      
-      <p>
-        Not to escape my life, but to reconnect with it. To see who I am when I’m not
-        wrapped up in job titles, routines, or expectations that no longer fit.
-      </p>
+        <p>
+          So instead of buying another couch, pretending a short vacation would magically fix everything, or picking up a questionable coping mechanism,
+          I made a bigger decision.
+        </p>
 
-      <p>
-        This site isn’t about perfect travel photos or pretending every day is magical.
-        It’s about the real version of choosing yourself. The beautiful parts, the
-        awkward parts, the lonely moments, and the surprising joy that shows up when
-        you least expect it.
-      </p>
+        <p>
+          In January 2026, I resigned from my job after twenty years. Twenty years in the same business. Twenty years helping grow it into something successful.
+          That job was my identity, and I was proud of what I helped build. I still am. But I also see now that my career should never have been
+          <em>that much</em> of who I was. There is more to life than just work.
+        </p>
 
-      <p>
-        If you’re here because you’re curious, restless, stuck, or quietly wondering if
-        you’re allowed to want more, welcome. If you are my friends and family, thanks for your constant support 
-        supporting my crazy idea.
-        
+        <p>
+          I had no idea what was next. No job. No income. Naturally, I did the most logical thing a woman in her mid-40s could do:
+          I booked a vacation to “think.”
+        </p>
+
+        <p>
+          I logged into my Holland America account, curious if I had any inexpensive cruise offers. Turns out, I had many. One week became two.
+          Two became a month. A month became three. Before I knew it, I had a six-month itinerary mapped out. I ran the numbers. Rent. Utilities.
+          Groceries. Snow plowing. And realized something wild: it would actually be less expensive to live on a cruise ship than to maintain my apartment.
+        </p>
+
+        <p>
+          So I gave notice to my landlord and decided to travel the world.
+        </p>
+
+        <p>
+          Not to escape my life, but to reconnect with it. To see who I am without job titles, routines, and expectations that no longer fit.
+        </p>
+
+        <p>
+          This site isn’t about perfect travel photos or pretending every day is magical. It’s about the real version of choosing yourself.
+          The beautiful parts. The awkward parts. The lonely moments. And the surprising joy that shows up when you least expect it.
+        </p>
+
+        <p>
+          If you’re here because you’re curious, restless, stuck, or quietly wondering if you’re allowed to want more, welcome.
+          And if you’re my friends or family, thank you for supporting this slightly unhinged but deeply intentional idea.
+
+          Please follow me on one of my social pages as those will be updated more frequently than this website!
+        </p>
+
+      </div>
+    </section>
+
+    <div class="footer-note">
+      Thanks for being here. ❤️
+    </div>
+
+  </div>
+</body>
+</html>
