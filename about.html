@@ -5,7 +5,7 @@
   <title>About Me | Jelly Untethered</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font Awesome (optional) -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -91,15 +91,39 @@
       margin: 0 0 16px;
     }
 
-    .about-text p:last-child {
-      margin-bottom: 0;
+    .social-section {
+      margin-top: 40px;
     }
 
+    .social-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: #374151;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 14px;
+      font-size: 34px;
+      text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.15);
+      opacity: 0.85;
+    }
+
+    .facebook { color: #1877f2; }
+    .instagram { color: #e1306c; }
+    .tiktok { color: #000000; }
+    .youtube { color: #ff0000; }
+
     .footer-note {
-      margin-top: 18px;
+      margin-top: 32px;
       font-size: 0.95rem;
       color: #6b7280;
-      text-align: center;
       line-height: 1.6;
     }
   </style>
@@ -108,7 +132,6 @@
 <body>
   <div class="container">
 
-    <!-- Navigation -->
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About Me</a>
@@ -145,53 +168,53 @@
         <p>
           First came the divorce. Then unexpected changes at work. Then the quiet, uncomfortable realization that my life was getting smaller
           instead of bigger. Burnout showed up uninvited. Restlessness followed. And the question <em>“Is this really it?”</em> refused to leave.
-          Life began to feel like a series of repeated motions. I was running hard, constantly in motion, but not actually going anywhere.
         </p>
 
         <p>
-          So instead of buying another couch, pretending a short vacation would magically fix everything, or picking up a questionable coping mechanism,
-          I made a bigger decision.
+          In January 2026, I resigned from my job after twenty years. That career was my identity, and I was proud of what I helped build.
+          I still am. I just finally realized there’s more to life than only being good at work.
         </p>
 
         <p>
-          In January 2026, I resigned from my job after twenty years. Twenty years in the same business. Twenty years helping grow it into something successful.
-          That job was my identity, and I was proud of what I helped build. I still am. But I also see now that my career should never have been
-          <em>that much</em> of who I was. There is more to life than just work.
+          So I did the most logical thing a woman in her mid-40s could do: I booked a vacation to “think.”
+          One week became six months. Math happened. And suddenly it was cheaper to live on a cruise ship than in my apartment.
         </p>
 
         <p>
-          I had no idea what was next. No job. No income. Naturally, I did the most logical thing a woman in her mid-40s could do:
-          I booked a vacation to “think.”
+          This site isn’t about perfect travel photos. It’s about choosing yourself. The beautiful parts.
+          The awkward parts. The lonely moments. And the joy that shows up unexpectedly.
         </p>
 
         <p>
-          I logged into my Holland America account, curious if I had any inexpensive cruise offers. Turns out, I had many. One week became two.
-          Two became a month. A month became three. Before I knew it, I had a six-month itinerary mapped out. I ran the numbers. Rent. Utilities.
-          Groceries. Snow plowing. And realized something wild: it would actually be less expensive to live on a cruise ship than to maintain my apartment.
-        </p>
-
-        <p>
-          So I gave notice to my landlord and decided to travel the world.
-        </p>
-
-        <p>
-          Not to escape my life, but to reconnect with it. To see who I am without job titles, routines, and expectations that no longer fit.
-        </p>
-
-        <p>
-          This site isn’t about perfect travel photos or pretending every day is magical. It’s about the real version of choosing yourself.
-          The beautiful parts. The awkward parts. The lonely moments. And the surprising joy that shows up when you least expect it.
-        </p>
-
-        <p>
-          If you’re here because you’re curious, restless, stuck, or quietly wondering if you’re allowed to want more, welcome.
+          If you’re here because you’re curious, restless, or quietly wondering if you’re allowed to want more, welcome.
           And if you’re my friends or family, thank you for supporting this slightly unhinged but deeply intentional idea.
-
-          Please follow me on one of my social pages as those will be updated more frequently than this website!
         </p>
 
       </div>
     </section>
+
+    <!-- Social Section -->
+    <div class="social-section">
+      <div class="social-title">Follow me on social</div>
+
+      <div class="social-icons">
+        <a class="facebook" href="https://www.facebook.com/jellyuntethered" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+
+        <a class="instagram" href="https://www.instagram.com/jelly_untethered" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a class="tiktok" href="https://www.tiktok.com/@jelly_untethered" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a class="youtube" href="https://www.youtube.com/@jellyuntethered" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
 
     <div class="footer-note">
       Thanks for being here. ❤️
