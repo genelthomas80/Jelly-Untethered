@@ -5,6 +5,9 @@
   <title>Support | Jelly Untethered</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     :root{
       --bg1:#ffffff;
@@ -182,11 +185,11 @@
     }
 
     .btnTitle strong{
-  font-size: 1.03rem;
-  letter-spacing: .1px;
-  white-space: normal;
-  overflow: visible;
-  }
+      font-size: 1.03rem;
+      letter-spacing: .1px;
+      white-space: normal;
+      overflow: visible;
+    }
 
     .btnTitle span{
       font-size: 0.92rem;
@@ -233,15 +236,41 @@
     svg.logo { width: 28px; height: 28px; display:block; }
     svg.logoWide { width: 34px; height: 22px; display:block; }
 
-    /* Optional: if you upload a Holland America logo image, uncomment this block
-       and set the <img> in the HTML below.
-    .haLogoImg{
-      width: 30px;
-      height: 30px;
-      object-fit: contain;
-      display:block;
+    /* SOCIAL SECTION (same setup as your Home/About/Journeys pages) */
+    .social-section{
+      margin-top: 38px;
+      text-align: center;
     }
-    */
+
+    .social-title{
+      font-size: 1.15em;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: #444;
+    }
+
+    .social-icons{
+      margin-top: 8px;
+    }
+
+    .social-icons a{
+      display: inline-block;
+      margin: 0 12px;
+      font-size: 34px;
+      text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-icons a:hover{
+      transform: scale(1.15);
+      opacity: 0.85;
+    }
+
+    .facebook { color: #1877f2; }
+    .instagram { color: #e1306c; }
+    .tiktok { color: #000000; }
+    .youtube { color: #ff0000; }
   </style>
 </head>
 
@@ -280,7 +309,6 @@
            href="https://venmo.com/u/jelly_untethered"
            target="_blank" rel="noopener noreferrer">
           <div class="iconChip" aria-hidden="true">
-            <!-- Venmo logo (inline SVG) -->
             <svg class="logo" viewBox="0 0 256 256" role="img" aria-label="Venmo">
               <path fill="#3D95CE" d="M206.3 35.2c9.7 16.1 13.2 36.5 10.6 61.1-5.3 49.9-44.6 118.5-79.6 159.7H60.4L28 63.2l67.7-6.4 17.1 138.4c15.6-25.4 34.7-65.4 37.8-92 1-10.3.6-18.8-1.2-25.6-1.8-6.8-4.7-12.7-8.6-17.7l65.5-24.7z"/>
             </svg>
@@ -299,7 +327,6 @@
            href="https://www.paypal.me/jellyuntethered"
            target="_blank" rel="noopener noreferrer">
           <div class="iconChip" aria-hidden="true">
-            <!-- PayPal logo (inline SVG) -->
             <svg class="logoWide" viewBox="0 0 256 256" role="img" aria-label="PayPal">
               <path fill="#003087" d="M205.6 67.8c-6.6-22.1-26.1-36.3-54.9-36.3H71.3c-5.1 0-9.4 3.7-10.2 8.7L33.9 212.9c-.6 3.8 2.3 7.3 6.1 7.3h48.9l-2.8 17.7c-.6 3.8 2.3 7.3 6.1 7.3h41.8c4.5 0 8.4-3.3 9.1-7.7l.3-1.7 7.9-50.5.5-2.8c.7-4.5 4.6-7.7 9.1-7.7h5.7c36.7 0 65.4-14.9 73.8-58 3.5-18 1.6-33-6.8-47.9z"/>
               <path fill="#009CDE" d="M186.8 86.3c-1.2 7.6-3.6 15.7-7.4 24.2-13.4 30.1-42.8 40.6-78.7 40.6h-7.3c-4.5 0-8.4 3.3-9.1 7.7L70 246.9h-30c-3.8 0-6.7-3.5-6.1-7.3L61.1 40.2c.8-5 5.1-8.7 10.2-8.7h79.4c28.8 0 48.3 14.2 54.9 36.3 2.9 9.7 3.4 19.3 1.2 28.5z"/>
@@ -315,19 +342,12 @@
         </a>
 
         <!-- HOLLAND AMERICA -->
-        <a class="btn btn-gift"
-           href="giftcard.html">
+        <a class="btn btn-gift" href="giftcard.html">
           <div class="iconChip" aria-hidden="true">
-            <!-- Option A (built-in): simple HA monogram "logo" -->
             <svg class="logo" viewBox="0 0 48 48" role="img" aria-label="Holland America">
               <rect x="6" y="6" width="36" height="36" rx="12" fill="#111827"/>
               <path d="M16 32V16h4v6h8v-6h4v16h-4v-6h-8v6h-4z" fill="#ffffff"/>
             </svg>
-
-            <!-- Option B (if you upload a logo image named ha-logo.png):
-                 Replace the SVG above with:
-                 <img class="haLogoImg" src="ha-logo.png" alt="Holland America">
-            -->
           </div>
 
           <div class="btnTitle">
@@ -349,6 +369,42 @@
         Thank you for being here. Seriously. ❤️
       </div>
     </section>
+
+    <!-- SOCIAL -->
+    <div class="social-section">
+      <div class="social-title">Follow me on social</div>
+
+      <div class="social-icons">
+        <a class="facebook"
+           href="https://www.facebook.com/jellyuntethered"
+           target="_blank"
+           aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+
+        <a class="instagram"
+           href="https://www.instagram.com/jelly_untethered"
+           target="_blank"
+           aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a class="tiktok"
+           href="https://www.tiktok.com/@jelly_untethered"
+           target="_blank"
+           aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a class="youtube"
+           href="https://www.youtube.com/@jellyuntethered"
+           target="_blank"
+           aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
