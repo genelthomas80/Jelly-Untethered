@@ -23,19 +23,42 @@
       margin: 0 auto;
     }
 
+    /* Mobile-friendly navigation */
     nav {
-      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0 30px;
     }
 
     nav a {
-      margin: 0 15px;
+      display: inline-block;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: bold;
-      color: #555;
+      color: #111827;
+      font-weight: 700;
+      font-size: 0.98em;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.15s ease, opacity 0.15s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      transform: translateY(-1px);
+      opacity: 0.92;
+    }
+
+    nav a:active {
+      transform: scale(0.98);
+    }
+
+    nav a.active {
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
     }
 
     img {
@@ -115,7 +138,7 @@
 
     <!-- Navigation -->
     <nav>
-      <a href="index.html">Home</a>
+      <a class="active" href="index.html">Home</a>
       <a href="about.html">About Me</a>
       <a href="journeys.html">Journeys</a>
       <a href="support.html">Support</a>
@@ -130,7 +153,8 @@
     </div>
 
     <div class="subtext">
-      Jelly Untethered is about movement, freedom, and choosing the road less planned. Sometimes life throws us curveballs and we just need to swing. That's what I am doing. 
+      Jelly Untethered is about movement, freedom, and choosing the road less planned.
+      Sometimes life throws us curveballs and we just need to swing. That’s what I’m doing.
       More stories soon.
     </div>
 
