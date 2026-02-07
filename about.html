@@ -24,26 +24,42 @@
       margin: 0 auto;
     }
 
+    /* Mobile-friendly navigation (matches Home) */
     nav {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 10px 18px;
-      margin-bottom: 26px;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0 26px;
     }
 
     nav a {
-      color: #4b5563;
+      display: inline-block;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: 800;
-      padding: 8px 10px;
-      border-radius: 12px;
-      transition: background 0.15s ease, transform 0.15s ease;
+      color: #111827;
+      font-weight: 700;
+      font-size: 0.98em;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.15s ease, opacity 0.15s ease;
     }
 
     nav a:hover {
-      background: rgba(0,0,0,0.05);
       transform: translateY(-1px);
+      opacity: 0.92;
+    }
+
+    nav a:active {
+      transform: scale(0.98);
+    }
+
+    nav a.active {
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
     }
 
     h1 {
@@ -76,7 +92,7 @@
       width: 100%;
       margin: 0 auto 34px;
       border-radius: 16px;
-      box-shadow: 0 12px 328px rgba(0,0,0,0.14);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.14);
     }
 
     /* TEXT */
@@ -139,7 +155,7 @@
 
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
+      <a class="active" href="about.html">About Me</a>
       <a href="journeys.html">Journeys</a>
       <a href="support.html">Support</a>
     </nav>
@@ -184,7 +200,7 @@
 
       <p>
         In January 2026, I resigned from my job after twenty years. That career was my identity, and I was proud of what I helped build.
-        I still am. I just finally realized there’s more to life than only being good at work. 
+        I still am. I just finally realized there’s more to life than only being good at work.
       </p>
 
       <p>
@@ -193,7 +209,7 @@
       </p>
 
       <p>
-        This site isn’t about perfect travel photos. It’s about choosing yourself—the beautiful parts.
+        This site isn’t about perfect travel photos. It’s about choosing yourself. The beautiful parts.
         The awkward parts. The lonely moments. And the joy that shows up unexpectedly.
       </p>
 
