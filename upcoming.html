@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upcoming Trips | Jelly Untethered</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
+      color: #111827;
+      padding: 52px 18px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    nav{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin: 10px 0 30px;
+    }
+
+    nav a{
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      text-decoration:none;
+      color: #111827;
+      font-weight: 700;
+      font-size: 0.95em;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    nav a:hover{
+      transform: translateY(-1px);
+      opacity: 0.92;
+    }
+
+    nav a.active{
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
+    }
+
+    h1{
+      font-size: 2.6em;
+      margin: 0;
+    }
+
+    .intro{
+      margin: 14px auto 0;
+      max-width: 780px;
+      color: #6b7280;
+      line-height: 1.6;
+      font-size: 1.05em;
+    }
+
+    hr{
+      margin: 36px auto;
+      width: 70px;
+      height: 4px;
+      background: #d1d5db;
+      border: none;
+      border-radius: 999px;
+    }
+
+    /* TRIP CARDS */
+    .trip{
+      background: rgba(255,255,255,0.85);
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 22px;
+      margin: 22px auto;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      text-align: left;
+    }
+
+    .trip h2{
+      margin: 0 0 6px;
+      font-size: 1.4em;
+    }
+
+    .meta{
+      color: #6b7280;
+      font-size: 0.95em;
+      margin-bottom: 12px;
+    }
+
+    .trip p{
+      color: #374151;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .map{
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+    }
+
+    .map img{
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .footer-note{
+      margin-top: 40px;
+      color: #6b7280;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 600px){
+      h1{ font-size: 2.2em; }
+      .trip{ padding: 18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- NAV -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="journeys.html">Journeys</a>
+      <a class="active" href="upcoming.html">Upcoming</a>
+      <a href="support.html">Support</a>
+    </nav>
+
+    <h1>Upcoming Trips</h1>
+
+    <div class="intro">
+      These are the adventures currently on the calendar. Routes may change.
+      Snacks are guaranteed.
+    </div>
+
+    <hr>
+
+    <!-- TRIP 1 -->
+    <section class="trip">
+      <h2>Eastern Caribbean Cruise</h2>
+      <div class="meta">March 2026 • Holland America • Nieuw Statendam</div>
+      <p>
+        Sun, sea days, and turquoise water. Ports include Half Moon Cay,
+        Grand Turk, Amber Cove, and Key West.
+      </p>
+
+      <div class="map">
+        <img src="images/upcoming/eastern-caribbean-map.jpg"
+             alt="Eastern Caribbean cruise route map">
+      </div>
+    </section>
+
+    <!-- TRIP 2 -->
+    <section class="trip">
+      <h2>Panama Canal Cruise</h2>
+      <div class="meta">April 2026 • Holland America • Koningsdam</div>
+      <p>
+        A bucket-list transit through the Panama Canal with stops throughout
+        the Caribbean and Central America.
+      </p>
+
+      <div class="map">
+        <img src="images/upcoming/panama-canal-map.jpg"
+             alt="Panama Canal cruise route map">
+      </div>
+    </section>
+
+    <div class="footer-note">
+      More trips will appear here as plans become dangerously real.
+    </div>
+
+  </div>
+</body>
+</html>
