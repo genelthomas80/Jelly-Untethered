@@ -1,65 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Support | Jelly Untethered</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <title>Upcoming Trips | Jelly Untethered</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    :root{
-      --bg1:#ffffff;
-      --bg2:#f0f4f8;
-
-      --text:#111827;
-      --muted:#6b7280;
-
-      --card: rgba(255,255,255,0.88);
-      --border:#e5e7eb;
-      --shadow: 0 14px 40px rgba(0,0,0,0.08);
-
-      --venmo:#3d95ce;
-      --paypal:#003087;
-      --gray:#374151;
-
-      --chipBg: rgba(255,255,255,0.85);
-    }
-
-    * { box-sizing: border-box; }
-
-    body{
-      margin:0;
+    body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
-      color: var(--text);
+      background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
+      color: #111827;
       padding: 52px 18px;
-      text-align:center;
+      text-align: center;
     }
 
-    .container{ max-width: 980px; margin: 0 auto; }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-    /* Mobile-friendly navigation (matches other pages) */
+    /* NAV */
     nav{
       display:flex;
       justify-content:center;
       flex-wrap:wrap;
       gap: 10px;
-      margin: 10px 0 26px;
-      text-align: center;
+      margin: 10px 0 30px;
     }
 
     nav a{
-      display: inline-block;
       padding: 10px 14px;
       background: rgba(255,255,255,0.9);
-      border: 1px solid var(--border);
+      border: 1px solid #e5e7eb;
       border-radius: 999px;
       text-decoration:none;
-      color: var(--text);
+      color: #111827;
       font-weight: 700;
-      font-size: 0.98em;
+      font-size: 0.95em;
       box-shadow: 0 6px 14px rgba(0,0,0,0.06);
       transition: transform 0.15s ease, opacity 0.15s ease;
     }
@@ -69,194 +51,78 @@
       opacity: 0.92;
     }
 
-    nav a:active{
-      transform: scale(0.98);
-    }
-
     nav a.active{
       background: #111827;
       color: #ffffff;
       border-color: #111827;
     }
 
-    header h1{
+    h1{
+      font-size: 2.6em;
       margin: 0;
-      font-size: clamp(2rem, 2.6vw, 2.75rem);
-      letter-spacing: .2px;
     }
 
-    header p{
-      margin: 12px auto 0;
-      max-width: 820px;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 1.06rem;
+    .intro{
+      margin: 14px auto 0;
+      max-width: 780px;
+      color: #6b7280;
+      line-height: 1.6;
+      font-size: 1.05em;
     }
 
-    .divider{
-      margin: 32px auto 28px;
-      width: 86px;
+    hr{
+      margin: 36px auto;
+      width: 70px;
       height: 4px;
       background: #d1d5db;
-      border-radius: 999px;
       border: none;
+      border-radius: 999px;
     }
 
-    .card{
-      max-width: 860px;
-      margin: 0 auto;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-      padding: 28px 24px;
-      text-align:left;
-      backdrop-filter: blur(7px);
-    }
-
-    .card h2{
-      margin: 0;
-      font-size: 1.35rem;
-    }
-
-    .card p{
-      margin: 10px 0 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .cta-grid{
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    @media (max-width: 860px){
-      .cta-grid{ grid-template-columns: 1fr; }
-    }
-
-    /* --- Pretty buttons --- */
-    .btn{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      padding: 16px 16px;
+    /* TRIP CARDS */
+    .trip{
+      background: rgba(255,255,255,0.85);
+      border: 1px solid #e5e7eb;
       border-radius: 18px;
-      text-decoration:none;
-      font-weight: 900;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.92);
-      color: var(--text);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.06);
-      transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
-      text-align:left;
-      min-height: 88px;
-      position: relative;
-      overflow: hidden;
+      padding: 22px;
+      margin: 22px auto;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      text-align: left;
     }
 
-    .btn:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 16px 30px rgba(0,0,0,0.11);
+    .trip h2{
+      margin: 0 0 6px;
+      font-size: 1.4em;
     }
 
-    .btn:active{
-      transform: translateY(-1px);
+    .meta{
+      color: #6b7280;
+      font-size: 0.95em;
+      margin-bottom: 12px;
     }
 
-    .btn::before{
-      content:"";
-      position:absolute;
-      inset:-60px -60px auto auto;
-      width: 140px;
-      height: 140px;
-      border-radius: 999px;
-      opacity: 0.16;
-      transform: rotate(12deg);
-      pointer-events:none;
-      background: #d1d5db;
-    }
-
-    .btn-venmo::before{ background: var(--venmo); }
-    .btn-paypal::before{ background: var(--paypal); }
-    .btn-gift::before{ background: var(--gray); }
-
-    .iconChip{
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: var(--chipBg);
-      border: 1px solid var(--border);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex: 0 0 44px;
-    }
-
-    .btnTitle{
-      display:flex;
-      flex-direction: column;
-      line-height: 1.2;
-      gap: 6px;
-      min-width: 0;
-    }
-
-    .btnTitle strong{
-      font-size: 1.03rem;
-      letter-spacing: .1px;
-      white-space: normal;
-      overflow: visible;
-    }
-
-    .btnTitle span{
-      font-size: 0.92rem;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-size: 0.78rem;
-      font-weight: 900;
-      padding: 5px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.92);
+    .trip p{
       color: #374151;
-      margin-left: auto;
-      white-space: nowrap;
-    }
-
-    .warning{
-      margin-top: 16px;
-      padding: 14px 14px;
-      border-radius: 16px;
-      border: 1px dashed rgba(107,114,128,0.55);
-      background: rgba(255,255,255,0.65);
-      color: #6b7280;
-      text-align:center;
-      line-height: 1.65;
-      font-size: 0.95rem;
-    }
-
-    .fineprint{
-      margin-top: 18px;
-      font-size: 0.95rem;
-      color: #6b7280;
-      text-align:center;
       line-height: 1.6;
+      margin-bottom: 16px;
     }
 
-    /* Inline SVG sizing */
-    svg.logo { width: 28px; height: 28px; display:block; }
-    svg.logoWide { width: 34px; height: 22px; display:block; }
+    .map{
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+    }
 
-    /* SOCIAL SECTION */
+    .map img{
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    /* SOCIAL (matches your other pages) */
     .social-section{
-      margin-top: 38px;
+      margin-top: 42px;
       text-align: center;
     }
 
@@ -289,102 +155,161 @@
     .instagram { color: #e1306c; }
     .tiktok { color: #000000; }
     .youtube { color: #ff0000; }
+
+    .footer-note{
+      margin-top: 28px;
+      color: #6b7280;
+      font-size: 0.95em;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    @media (max-width: 600px){
+      h1{ font-size: 2.2em; }
+      .trip{ padding: 18px; }
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
+
+    <!-- NAV -->
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About Me</a>
       <a href="journeys.html">Journeys</a>
-      <a class="active" href="support.html">Support</a>
+      <a class="active" href="upcoming.html">Upcoming</a>
+      <a href="support.html">Support</a>
     </nav>
 
-    <header>
-      <h1>Support</h1>
+    <h1>Upcoming Trips</h1>
+
+    <div class="intro">
+      These are the adventures currently on the calendar for 2026.
+      Routes may change, plans may evolve, and I will definitely overpack anyway.
+    </div>
+
+    <hr>
+
+    <!-- MARCH 2026 -->
+    <section class="trip">
+      <h2>Eastern Caribbean</h2>
+      <div class="meta">March 2026</div>
       <p>
-        If you’re enjoying the trips, the photos, and the occasional real-talk caption,
-        and you want to toss a little “buy me a drink” energy my way… this is the place.
-        <br><br>
-        Zero pressure. Watching, sharing, and cheering me on already counts.
+        Sun, sea days, and turquoise water. The official reset button, but with ocean views.
       </p>
-    </header>
+      <div class="map">
+        <img src="images/upcoming/Eastern Caribbean.jpg" alt="Eastern Caribbean route map">
+      </div>
+    </section>
 
-    <hr class="divider" />
-
-    <section class="card" id="support">
-      <h2>What this helps with</h2>
+    <!-- APRIL 2026 -->
+    <section class="trip">
+      <h2>Eastern Caribbean, U.S. & British Virgin Islands</h2>
+      <div class="meta">April 2026</div>
       <p>
-        It goes toward travel basics like Wi-Fi, excursions, bus and taxi rides, park passes,
-        and the occasional “I’m in a new country and I have no idea what I’m ordering” meal and drink.
+        Island hopping, warm water, and the kind of days where time politely stops existing.
       </p>
-
-      <div class="cta-grid">
-
-        <!-- VENMO -->
-        <a class="btn btn-venmo"
-           href="https://venmo.com/u/jelly_untethered"
-           target="_blank" rel="noopener noreferrer">
-          <div class="iconChip" aria-hidden="true">
-            <svg class="logo" viewBox="0 0 256 256" role="img" aria-label="Venmo">
-              <path fill="#3D95CE" d="M206.3 35.2c9.7 16.1 13.2 36.5 10.6 61.1-5.3 49.9-44.6 118.5-79.6 159.7H60.4L28 63.2l67.7-6.4 17.1 138.4c15.6-25.4 34.7-65.4 37.8-92 1-10.3.6-18.8-1.2-25.6-1.8-6.8-4.7-12.7-8.6-17.7l65.5-24.7z"/>
-            </svg>
-          </div>
-
-          <div class="btnTitle">
-            <strong>Venmo</strong>
-            <span>Quick + easy</span>
-          </div>
-
-          <div class="badge">popular</div>
-        </a>
-
-        <!-- PAYPAL -->
-        <a class="btn btn-paypal"
-           href="https://www.paypal.me/jellyuntethered"
-           target="_blank" rel="noopener noreferrer">
-          <div class="iconChip" aria-hidden="true">
-            <svg class="logoWide" viewBox="0 0 256 256" role="img" aria-label="PayPal">
-              <path fill="#003087" d="M205.6 67.8c-6.6-22.1-26.1-36.3-54.9-36.3H71.3c-5.1 0-9.4 3.7-10.2 8.7L33.9 212.9c-.6 3.8 2.3 7.3 6.1 7.3h48.9l-2.8 17.7c-.6 3.8 2.3 7.3 6.1 7.3h41.8c4.5 0 8.4-3.3 9.1-7.7l.3-1.7 7.9-50.5.5-2.8c.7-4.5 4.6-7.7 9.1-7.7h5.7c36.7 0 65.4-14.9 73.8-58 3.5-18 1.6-33-6.8-47.9z"/>
-              <path fill="#009CDE" d="M186.8 86.3c-1.2 7.6-3.6 15.7-7.4 24.2-13.4 30.1-42.8 40.6-78.7 40.6h-7.3c-4.5 0-8.4 3.3-9.1 7.7L70 246.9h-30c-3.8 0-6.7-3.5-6.1-7.3L61.1 40.2c.8-5 5.1-8.7 10.2-8.7h79.4c28.8 0 48.3 14.2 54.9 36.3 2.9 9.7 3.4 19.3 1.2 28.5z"/>
-            </svg>
-          </div>
-
-          <div class="btnTitle">
-            <strong>PayPal</strong>
-            <span>International-friendly</span>
-          </div>
-
-          <div class="badge">secure</div>
-        </a>
-
-        <!-- HOLLAND AMERICA -->
-        <a class="btn btn-gift" href="giftcard.html">
-          <div class="iconChip" aria-hidden="true">
-            <svg class="logo" viewBox="0 0 48 48" role="img" aria-label="Holland America">
-              <rect x="6" y="6" width="36" height="36" rx="12" fill="#111827"/>
-              <path d="M16 32V16h4v6h8v-6h4v16h-4v-6h-8v6h-4z" fill="#ffffff"/>
-            </svg>
-          </div>
-
-          <div class="btnTitle">
-            <strong>Holland America Gift Card</strong>
-            <span>Digital gift card only (details on next page)</span>
-          </div>
-
-          <div class="badge">digital only</div>
-        </a>
-
+      <div class="map">
+        <img src="images/upcoming/Eastern Caribbean, U.S. and British Virgin Islands.jpg"
+             alt="Eastern Caribbean U.S. and British Virgin Islands route map">
       </div>
+    </section>
 
-      <div class="warning">
-        Friendly warning because the internet is… the internet:
-        I’ll never DM you asking for money. Only use the links on this page.
+    <section class="trip">
+      <h2>Panama Canal</h2>
+      <div class="meta">April 2026</div>
+      <p>
+        A bucket-list transit with big scenery, bigger engineering, and a suspicious amount of joy.
+      </p>
+      <div class="map">
+        <img src="images/upcoming/Panama Canal.jpg" alt="Panama Canal route map">
       </div>
+    </section>
 
-      <div class="fineprint">
-        Thank you for being here. Seriously. ❤️
+    <!-- MAY 2026 -->
+    <section class="trip">
+      <h2>Alaska</h2>
+      <div class="meta">May 2026</div>
+      <p>
+        Glaciers, fjords, and scenery so dramatic it makes every problem feel smaller.
+      </p>
+      <div class="map">
+        <img src="images/upcoming/Alaska.jpg" alt="Alaska route map">
+      </div>
+    </section>
+
+    <section class="trip">
+      <h2>Western Mediterranean</h2>
+      <div class="meta">May 2026</div>
+      <p>
+        Sun-soaked ports, ancient streets, and me pretending I’m “laid back” while power-walking everywhere.
+      </p>
+      <div class="map">
+        <img src="images/upcoming/Western Mediterrean.jpg" alt="Western Mediterranean route map">
+      </div>
+    </section>
+
+    <!-- JUNE 2026 -->
+    <section class="trip">
+      <h2>Mediterranean: Italian & French Rivieras</h2>
+      <div class="meta">June 2026</div>
+      <p>
+        Coastlines built for postcards. I’ll be out there doing the most, respectfully.
+      </p>
+      <div class="map">
+        <img src="images/upcoming/Mediterrean-Italian and French Rivieras.jpg"
+             alt="Mediterranean Italian and French Rivieras route map">
+      </div>
+    </section>
+
+    <section class="trip">
+      <h2>Baltic & Scandinavian Capitals</h2>
+      <div class="meta">June 2026</div>
+      <p>
+        Cool-weather cities, crisp air, and architecture that makes you consider learning another language.
+      </p>
+      <div class="map">
+        <img src="images/upcoming/Baltic and Scandinavian Capitals.jpg"
+             alt="Baltic and Scandinavian Capitals route map">
+      </div>
+    </section>
+
+    <!-- JULY 2026 -->
+    <section class="trip">
+      <h2>British Isles</h2>
+      <div class="meta">July 2026</div>
+      <p>
+        Castles, pubs, and weather that cannot commit. I respect the chaos.
+      </p>
+      <div class="map">
+        <img src="images/upcoming/British Isles.jpg" alt="British Isles route map">
+      </div>
+    </section>
+
+    <!-- AUGUST 2026 -->
+    <section class="trip">
+      <h2>Canada & New England Circle</h2>
+      <div class="meta">August 2026</div>
+      <p>
+        Coastal towns, fresh air, and a gentle reminder that “pretty” can be peaceful too.
+      </p>
+      <div class="map">
+        <img src="images/upcoming/Canada and New England Circle.jpg"
+             alt="Canada and New England Circle route map">
+      </div>
+    </section>
+
+    <section class="trip">
+      <h2>Alaska Cruise & Land Tour</h2>
+      <div class="meta">August 2026</div>
+      <p>
+        Same wild beauty, extra adventure. Nature’s greatest hits, plus a few bonus tracks.
+      </p>
+      <div class="map">
+        <img src="images/upcoming/Alaska Cruise and Land Tour.jpg"
+             alt="Alaska Cruise and Land Tour route map">
       </div>
     </section>
 
@@ -393,34 +318,26 @@
       <div class="social-title">Follow me on social</div>
 
       <div class="social-icons">
-        <a class="facebook"
-           href="https://www.facebook.com/jellyuntethered"
-           target="_blank"
-           aria-label="Facebook">
+        <a class="facebook" href="https://www.facebook.com/jellyuntethered" target="_blank" aria-label="Facebook">
           <i class="fab fa-facebook"></i>
         </a>
 
-        <a class="instagram"
-           href="https://www.instagram.com/jelly_untethered"
-           target="_blank"
-           aria-label="Instagram">
+        <a class="instagram" href="https://www.instagram.com/jelly_untethered" target="_blank" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
 
-        <a class="tiktok"
-           href="https://www.tiktok.com/@jelly_untethered"
-           target="_blank"
-           aria-label="TikTok">
+        <a class="tiktok" href="https://www.tiktok.com/@jelly_untethered" target="_blank" aria-label="TikTok">
           <i class="fab fa-tiktok"></i>
         </a>
 
-        <a class="youtube"
-           href="https://www.youtube.com/@jellyuntethered"
-           target="_blank"
-           aria-label="YouTube">
+        <a class="youtube" href="https://www.youtube.com/@jellyuntethered" target="_blank" aria-label="YouTube">
           <i class="fab fa-youtube"></i>
         </a>
       </div>
+    </div>
+
+    <div class="footer-note">
+      More trips will appear here as plans become dangerously real.
     </div>
 
   </div>
