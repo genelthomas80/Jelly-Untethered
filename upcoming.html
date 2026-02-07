@@ -5,6 +5,10 @@
   <title>Upcoming Trips | Jelly Untethered</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     body {
       margin: 0;
@@ -116,11 +120,48 @@
       height: auto;
     }
 
+    /* SOCIAL SECTION (same style as your other pages) */
+    .social-section {
+      margin-top: 42px;
+      text-align: center;
+    }
+
+    .social-title {
+      font-size: 1.15em;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: #444;
+    }
+
+    .social-icons {
+      margin-top: 8px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 12px;
+      font-size: 34px;
+      text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.15);
+      opacity: 0.85;
+    }
+
+    .facebook { color: #1877f2; }
+    .instagram { color: #e1306c; }
+    .tiktok { color: #000000; }
+    .youtube { color: #ff0000; }
+
     .footer-note{
-      margin-top: 40px;
+      margin-top: 28px;
       color: #6b7280;
       font-size: 0.95em;
       line-height: 1.6;
+      text-align: center;
     }
 
     @media (max-width: 600px){
@@ -140,7 +181,6 @@
       <a href="journeys.html">Journeys</a>
       <a class="active" href="upcoming.html">Upcoming</a>
       <a href="support.html">Support</a>
-
     </nav>
 
     <h1>Upcoming Trips</h1>
@@ -160,8 +200,7 @@
         Sun, sea days, and turquoise water. The official reset button, but with ocean views.
       </p>
       <div class="map">
-        <img src="images/upcoming/Eastern Caribbean.jpg"
-             alt="Eastern Caribbean route map">
+        <img src="images/upcoming/Eastern Caribbean.jpg" alt="Eastern Caribbean route map">
       </div>
     </section>
 
@@ -185,8 +224,7 @@
         A bucket-list transit with big scenery, bigger engineering, and a suspicious amount of joy.
       </p>
       <div class="map">
-        <img src="images/upcoming/Panama Canal.jpg"
-             alt="Panama Canal route map">
+        <img src="images/upcoming/Panama Canal.jpg" alt="Panama Canal route map">
       </div>
     </section>
 
@@ -198,8 +236,7 @@
         Glaciers, fjords, and scenery so dramatic it makes every problem feel smaller.
       </p>
       <div class="map">
-        <img src="images/upcoming/Alaska.jpg"
-             alt="Alaska route map">
+        <img src="images/upcoming/Alaska.jpg" alt="Alaska route map">
       </div>
     </section>
 
@@ -210,8 +247,7 @@
         Sun-soaked ports, ancient streets, and me pretending I’m “laid back” while power-walking everywhere.
       </p>
       <div class="map">
-        <img src="images/upcoming/Western Mediterrean.jpg"
-             alt="Western Mediterranean route map">
+        <img src="images/upcoming/Western Mediterrean.jpg" alt="Western Mediterranean route map">
       </div>
     </section>
 
@@ -248,8 +284,7 @@
         Castles, pubs, and weather that cannot commit. I respect the chaos.
       </p>
       <div class="map">
-        <img src="images/upcoming/British Isles.jpg"
-             alt="British Isles route map">
+        <img src="images/upcoming/British Isles.jpg" alt="British Isles route map">
       </div>
     </section>
 
@@ -277,6 +312,26 @@
              alt="Alaska Cruise and Land Tour route map">
       </div>
     </section>
+
+    <!-- SOCIAL -->
+    <div class="social-section">
+      <div class="social-title">Follow me on social</div>
+
+      <div class="social-icons">
+        <a class="facebook" href="https://www.facebook.com/jellyuntethered" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a class="instagram" href="https://www.instagram.com/jelly_untethered" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="tiktok" href="https://www.tiktok.com/@jelly_untethered" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a class="youtube" href="https://www.youtube.com/@jellyuntethered" target="_blank" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
 
     <div class="footer-note">
       More trips will appear here as plans become dangerously real.
