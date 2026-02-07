@@ -16,12 +16,50 @@
       padding: 50px 20px;
       margin: 0;
     }
+
     .container { max-width: 1000px; margin: 0 auto; }
-    nav { margin-bottom: 30px; text-align: center; }
-    nav a { margin: 0 15px; text-decoration: none; font-weight: bold; color: #555; }
-    nav a:hover { text-decoration: underline; }
+
+    /* Mobile-friendly navigation (matches Home/About) */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0 30px;
+      text-align: center;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #111827;
+      font-weight: 700;
+      font-size: 0.98em;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    nav a:hover {
+      transform: translateY(-1px);
+      opacity: 0.92;
+    }
+
+    nav a:active {
+      transform: scale(0.98);
+    }
+
+    nav a.active {
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
+    }
 
     h1 { text-align: center; font-size: 2.6em; margin: 0; letter-spacing: 0.5px; }
+
     .intro {
       text-align: center;
       margin: 14px auto 0;
@@ -30,6 +68,7 @@
       line-height: 1.5;
       font-size: 1.05em;
     }
+
     hr.divider {
       margin: 35px auto 30px;
       width: 60px;
@@ -47,6 +86,7 @@
       margin: 18px auto;
       box-shadow: 0 6px 18px rgba(0,0,0,0.04);
     }
+
     .trip-header {
       display: flex;
       flex-wrap: wrap;
@@ -55,6 +95,7 @@
       gap: 10px;
       margin-bottom: 12px;
     }
+
     .trip-title { font-size: 1.35em; margin: 0; }
     .trip-meta { color: #666; font-size: 0.98em; margin: 0; }
     .trip-notes { margin: 0 0 14px; color: #555; line-height: 1.5; }
@@ -66,7 +107,9 @@
       padding: 0;
       margin: 0;
     }
+
     @media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+
     @media (max-width: 560px) {
       .gallery { grid-template-columns: 1fr; }
       body { padding: 36px 16px; }
@@ -93,7 +136,7 @@
       line-height: 1.35;
     }
 
-    /* SOCIAL SECTION (copied from your home/about vibe) */
+    /* SOCIAL SECTION */
     .social-section {
       margin-top: 42px;
       text-align: center;
@@ -144,7 +187,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About Me</a>
-      <a href="journeys.html">Journeys</a>
+      <a class="active" href="journeys.html">Journeys</a>
       <a href="support.html">Support</a>
     </nav>
 
