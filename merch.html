@@ -1,31 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Merch | Jelly Untethered</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background:#f6f7fb; color:#111827; }
-    .wrap { max-width: 900px; margin: 0 auto; padding: 48px 18px; }
-    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
-    h1 { margin: 0 0 10px; font-size: 32px; }
-    p { margin: 0 0 18px; line-height: 1.6; color:#374151; }
-    a.btn {
-      display:inline-block; text-decoration:none; padding: 12px 16px; border-radius: 12px;
-      background:#111827; color:#fff; font-weight:700;
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
+      color: #333;
+      text-align: center;
+      padding: 50px 20px;
+      margin: 0;
     }
-    a.btn:hover { opacity: 0.92; }
-    .note { margin-top: 12px; font-size: 14px; color:#6b7280; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    nav{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    nav a{
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      text-decoration:none;
+      color: #111827;
+      font-weight: 700;
+      font-size: 0.95em;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    nav a:hover{
+      transform: translateY(-1px);
+      opacity: 0.92;
+    }
+
+    nav a.active{
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
+    }
+
+    img {
+      max-width: 220px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: 2.4em;
+      margin: 0;
+      letter-spacing: 0.3px;
+    }
+
+    .tagline {
+      font-size: 1.15em;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+
+    .subtext {
+      margin-top: 10px;
+      color: #555;
+      font-size: 1.05em;
+      line-height: 1.6;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    hr {
+      margin: 38px auto 26px;
+      width: 70px;
+      border: none;
+      height: 4px;
+      background: #ddd;
+      border-radius: 3px;
+    }
+
+    /* CARD / PREVIEW STYLE (matches your index preview) */
+    .preview {
+      background: rgba(255,255,255,0.85);
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 24px;
+      margin: 28px auto;
+      max-width: 720px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+      text-align: left;
+    }
+
+    .preview h2 {
+      margin-top: 0;
+      font-size: 1.4em;
+      text-align: center;
+    }
+
+    .preview p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .preview ul {
+      margin: 0 0 18px 20px;
+      padding: 0;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .preview li {
+      margin: 6px 0;
+    }
+
+    .btn-row{
+      display:flex;
+      justify-content:center;
+      gap: 12px;
+      flex-wrap:wrap;
+      margin-top: 16px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #111827;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95em;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.95);
+      color: #111827;
+      border: 1px solid #e5e7eb;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95em;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn-secondary:hover{
+      transform: translateY(-1px);
+      opacity: 0.92;
+    }
+
+    .fineprint {
+      margin-top: 14px;
+      font-size: 0.92em;
+      color: #777;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .footer-note {
+      margin-top: 35px;
+      font-size: 0.95em;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    /* Small screens */
+    @media (max-width: 520px){
+      .preview { text-align: left; }
+      h1 { font-size: 2.1em; }
+    }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Merch</h1>
-      <p>Official Jelly Untethered gear. Your purchase directly supports me by </p>
-      <a class="btn" href="https://jelly-untethered.printify.me" target="_blank" rel="noopener">Shop the Store</a>
-      <div class="note">Opens in a new tab so your website doesn’t rage-quit.</div>
+  <div class="container">
+
+    <!-- NAV -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="journeys.html">Journeys</a>
+      <a href="upcoming.html">Upcoming</a>
+      <a class="active" href="merch.html">Merch</a>
+      <a href="support.html">Support</a>
+    </nav>
+
+    <img src="logo.png" alt="Jelly Untethered logo">
+
+    <h1>Merch</h1>
+
+    <div class="tagline">
+      Wear the adventure. Support the journey.
     </div>
+
+    <div class="subtext">
+      If Jelly Untethered has made you smile, inspired you to book something, or kept you company on a weird night,
+      this is one way to be part of the story.
+    </div>
+
+    <hr>
+
+    <!-- MERCH CARD -->
+    <div class="preview">
+      <h2><i class="fa-solid fa-bag-shopping"></i> Jelly Untethered Shop</h2>
+
+      <p>
+        This isn’t “just a shirt.” It’s a tiny flag that says: I believe in movement, freedom, and doing life a little differently.
+      
+      </p>
+
+      <p>
+        When you purchase from my merch shop:
+      </p>
+
+      <ul>
+        <li>You’re sporting my logo and helping spread Jelly Untethered out in the wild.</li>
+        <li>You’re directly supporting this travel project.</li>
+        <li><strong>I earn a small royalty on each purchase</strong>, which helps fund travel, content creation, and future adventures.</li>
+      </ul>
+
+      <p>
+        Thank you for supporting in any way, big or small. Whether you buy something or just follow along,
+        you’re part of what keeps this going.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn-primary" href="https://jelly-untethered.printify.me/" target="_blank" rel="noopener">
+          Shop Merch
+        </a>
+        <a class="btn-secondary" href="support.html">
+          Other ways to support
+        </a>
+      </div>
+
+      <div class="fineprint">
+        Fulfillment is handled by my Shopify/print partner (so no, I’m not personally stuffing envelopes at 2am).
+        I do receive a royalty per item sold.
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Currently untethering. More stories soon.
+    </div>
+
   </div>
 </body>
 </html>
