@@ -1,118 +1,968 @@
-<!-- PHOTO GALLERY -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-<section class="section">
+  <title>Where I've Been | Jelly Untethered</title>
 
-  <h2 class="section-title">
-    A Few Views Along the Way
-  </h2>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <div class="section-subtitle">
-    A few moments from around the world. Some places are famous.
-    Some surprised me. All became part of the story.
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #092f55;
+      padding: 35px 20px 50px;
+      margin: 0;
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 5% 10%,
+          rgba(42, 157, 190, 0.25),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 95% 20%,
+          rgba(245, 181, 27, 0.14),
+          transparent 27%
+        ),
+        radial-gradient(
+          circle at 90% 85%,
+          rgba(232, 120, 34, 0.22),
+          transparent 33%
+        ),
+        linear-gradient(
+          180deg,
+          #fff9eb 0%,
+          #f7ecd5 48%,
+          #fff8e9 100%
+        );
+
+      background-attachment: fixed;
+    }
+
+
+    /* MAIN CONTAINER */
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(9,47,85,0.15);
+      border-radius: 999px;
+      text-decoration: none;
+      color: #092f55;
+      font-weight: 700;
+      font-size: 0.95em;
+      box-shadow: 0 5px 14px rgba(9,47,85,0.08);
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        color 0.15s ease;
+    }
+
+    nav a:hover {
+      transform: translateY(-2px);
+      background: #e87822;
+      color: #ffffff;
+    }
+
+    nav a.active {
+      background: #092f55;
+      color: #ffffff;
+      border-color: #092f55;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+      max-width: 220px;
+      width: 65%;
+      margin: 0 auto 18px;
+      display: block;
+    }
+
+
+    /* HEADER */
+
+    .page-header {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin: 0;
+      color: #092f55;
+      letter-spacing: 0.3px;
+    }
+
+    .gold-line {
+      width: 85px;
+      height: 4px;
+      margin: 14px auto 18px;
+      background: #f5b51b;
+      border-radius: 5px;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #526979;
+      line-height: 1.75;
+      font-size: 1.08rem;
+    }
+
+
+    /* TRAVEL OVERVIEW */
+
+    .travel-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 35px auto;
+      max-width: 800px;
+    }
+
+    .stat {
+      padding: 22px 15px;
+      text-align: center;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(9,47,85,0.10);
+      border-radius: 18px;
+      box-shadow: 0 7px 20px rgba(9,47,85,0.08);
+    }
+
+    .stat i {
+      display: block;
+      margin-bottom: 10px;
+      color: #e87822;
+      font-size: 27px;
+    }
+
+    .stat-title {
+      font-weight: 800;
+      color: #092f55;
+      font-size: 1rem;
+    }
+
+    .stat-text {
+      margin-top: 6px;
+      color: #667785;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+
+    /* SECTIONS */
+
+    .section {
+      margin-top: 48px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 8px;
+      color: #092f55;
+      font-size: 1.7rem;
+    }
+
+    .section-subtitle {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      text-align: center;
+      color: #667785;
+      line-height: 1.6;
+    }
+
+
+    /* COUNTRIES */
+
+    .country-group {
+      margin-top: 32px;
+    }
+
+    .continent-heading {
+      text-align: center;
+      color: #092f55;
+      margin: 0 0 14px;
+      font-size: 1.15rem;
+    }
+
+    .continents {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .continent {
+      padding: 11px 18px;
+      background: rgba(255,255,255,0.90);
+      border: 1px solid rgba(9,47,85,0.12);
+      border-radius: 999px;
+      color: #092f55;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(9,47,85,0.07);
+    }
+
+
+    /* PHOTO GALLERY */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .gallery figure {
+      position: relative;
+      margin: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 7px 18px rgba(9,47,85,0.12);
+    }
+
+    /* Center the seventh photo on desktop */
+    .gallery figure:last-child:nth-child(3n + 1) {
+      grid-column: 2;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery figure:hover img {
+      transform: scale(1.035);
+    }
+
+    .gallery figcaption {
+      padding: 11px 12px;
+      text-align: center;
+      color: #526979;
+      background: rgba(255,255,255,0.96);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+
+    /* FOLLOW CARD */
+
+    .follow-card {
+      max-width: 800px;
+      margin: 50px auto 0;
+      padding: 32px 28px;
+      text-align: center;
+      background: rgba(255,255,255,0.90);
+      border: 1px solid rgba(9,47,85,0.10);
+      border-radius: 22px;
+      box-shadow: 0 9px 25px rgba(9,47,85,0.10);
+    }
+
+    .follow-card h2 {
+      margin: 0 0 12px;
+      color: #092f55;
+    }
+
+    .follow-card p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: #526979;
+      line-height: 1.7;
+    }
+
+    .follow-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: #092f55;
+      color: #ffffff;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .follow-button:hover {
+      transform: translateY(-2px);
+      background: #e87822;
+    }
+
+
+    /* SOCIAL ICONS */
+
+    .social-icons {
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin: 0 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      text-decoration: none;
+      font-size: 26px;
+      box-shadow: 0 5px 14px rgba(9,47,85,0.10);
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .facebook {
+      color: #1877f2;
+    }
+
+    .instagram {
+      color: #e1306c;
+    }
+
+    .tiktok {
+      color: #111111;
+    }
+
+    .youtube {
+      color: #ff0000;
+    }
+
+
+    /* FOOTER */
+
+    .footer-note {
+      margin-top: 35px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(9,47,85,0.12);
+      text-align: center;
+      color: #667785;
+      font-size: 0.95rem;
+    }
+
+    .footer-categories {
+      margin-top: 7px;
+      color: #092f55;
+      font-size: 0.78em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      body {
+        padding: 22px 14px 40px;
+        background-attachment: scroll;
+      }
+
+      nav {
+        gap: 7px;
+        margin-bottom: 23px;
+      }
+
+      nav a {
+        padding: 8px 11px;
+        font-size: 0.83em;
+      }
+
+      .logo {
+        max-width: 190px;
+      }
+
+      .travel-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery figure:last-child:nth-child(3n + 1) {
+        grid-column: auto;
+      }
+
+      .gallery figure:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: calc(50% - 7px);
+        justify-self: center;
+      }
+
+      .gallery img {
+        height: 190px;
+      }
+
+      .continent {
+        padding: 9px 13px;
+        font-size: 0.9rem;
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery figure:last-child:nth-child(odd) {
+        grid-column: auto;
+        width: 100%;
+      }
+
+      .gallery img {
+        height: 240px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="container">
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About Me
+      </a>
+
+      <a class="active" href="journeys.html">
+        Where I've Been
+      </a>
+
+      <a href="merch.html">
+        Merch
+      </a>
+
+      <a href="support.html">
+        Support
+      </a>
+
+      <a href="follow.html">
+        Follow
+      </a>
+
+    </nav>
+
+
+    <!-- LOGO -->
+
+    <img
+      src="logo.png"
+      alt="Jelly Untethered logo"
+      class="logo"
+    >
+
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+      <h1>
+        Where I've Been
+      </h1>
+
+      <div class="gold-line"></div>
+
+      <div class="intro">
+
+        I started traveling long before I became Jelly Untethered,
+        but somewhere along the way travel stopped being something
+        I did and became how I live.
+
+        <br><br>
+
+        This isn't a complete travel diary. Nobody needs that much
+        scrolling. It's a snapshot of some of the places, landscapes
+        and adventures that have made the journey memorable.
+
+      </div>
+
+    </div>
+
+
+    <!-- TRAVEL OVERVIEW -->
+
+    <div class="travel-stats">
+
+      <div class="stat">
+
+        <i class="fa-solid fa-earth-americas"></i>
+
+        <div class="stat-title">
+          Around the World
+        </div>
+
+        <div class="stat-text">
+          Countries, cities, islands and places I didn't expect to love.
+        </div>
+
+      </div>
+
+
+      <div class="stat">
+
+        <i class="fa-solid fa-ship"></i>
+
+        <div class="stat-title">
+          By Land & Sea
+        </div>
+
+        <div class="stat-text">
+          Cruise ships, planes, trains, buses, cars and occasionally my own two feet.
+        </div>
+
+      </div>
+
+
+      <div class="stat">
+
+        <i class="fa-solid fa-binoculars"></i>
+
+        <div class="stat-title">
+          Always Looking
+        </div>
+
+        <div class="stat-text">
+          Wildlife, landscapes, culture and the people I meet along the way.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- COUNTRIES & DESTINATIONS -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        Countries & Destinations
+      </h2>
+
+      <div class="section-subtitle">
+        A growing list of places I've been lucky enough to experience.
+        Some were vacations. Some were adventures. These days, it's simply life.
+      </div>
+
+
+      <!-- NORTH AMERICA, CENTRAL AMERICA & CARIBBEAN -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🌎 North America, Central America & Caribbean
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">Antigua and Barbuda</div>
+          <div class="continent">Bahamas</div>
+          <div class="continent">Canada</div>
+          <div class="continent">Costa Rica</div>
+          <div class="continent">Dominica</div>
+          <div class="continent">Dominican Republic</div>
+          <div class="continent">El Salvador</div>
+          <div class="continent">Guatemala</div>
+          <div class="continent">Jamaica</div>
+          <div class="continent">Mexico</div>
+          <div class="continent">Panama</div>
+          <div class="continent">Saint Kitts and Nevis</div>
+          <div class="continent">Saint Lucia</div>
+          <div class="continent">United States</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SOUTH AMERICA -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🌎 South America
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">Colombia</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- EUROPE -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🌍 Europe
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">Belgium</div>
+          <div class="continent">Croatia</div>
+          <div class="continent">Denmark</div>
+          <div class="continent">Estonia</div>
+          <div class="continent">Finland</div>
+          <div class="continent">France</div>
+          <div class="continent">Germany</div>
+          <div class="continent">Greece</div>
+          <div class="continent">Iceland</div>
+          <div class="continent">Ireland</div>
+          <div class="continent">Italy</div>
+          <div class="continent">Luxembourg</div>
+          <div class="continent">Malta</div>
+          <div class="continent">Netherlands</div>
+          <div class="continent">Norway</div>
+          <div class="continent">Portugal</div>
+          <div class="continent">Spain</div>
+          <div class="continent">Sweden</div>
+          <div class="continent">United Kingdom</div>
+          <div class="continent">Vatican City</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ASIA -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🌏 Asia
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">Armenia</div>
+          <div class="continent">Turkey</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- AFRICA -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🌍 Africa
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">Morocco</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- TERRITORIES & ISLANDS -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🧭 Territories & Islands
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">British Virgin Islands</div>
+          <div class="continent">Cayman Islands</div>
+          <div class="continent">Gibraltar</div>
+          <div class="continent">Puerto Rico</div>
+          <div class="continent">Turks and Caicos Islands</div>
+          <div class="continent">U.S. Virgin Islands</div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        A Few Views Along the Way
+      </h2>
+
+      <div class="section-subtitle">
+        A few moments from around the world. Some places are famous.
+        Some surprised me. All became part of the story.
+      </div>
+
+
+      <div class="gallery">
+
+
+        <!-- ARMENIA -->
+
+        <figure>
+
+          <img
+            src="images/journeys/Armenia.jpg"
+            alt="Traveling in Armenia"
+          >
+
+          <figcaption>
+            Armenia
+          </figcaption>
+
+        </figure>
+
+
+        <!-- DENMARK -->
+
+        <figure>
+
+          <img
+            src="images/journeys/denmark.jpg"
+            alt="Traveling in Denmark"
+          >
+
+          <figcaption>
+            Denmark
+          </figcaption>
+
+        </figure>
+
+
+        <!-- PISA -->
+
+        <figure>
+
+          <img
+            src="images/journeys/pisa.jpg"
+            alt="Pisa Italy"
+          >
+
+          <figcaption>
+            Pisa, Italy
+          </figcaption>
+
+        </figure>
+
+
+        <!-- SKAGWAY -->
+
+        <figure>
+
+          <img
+            src="images/journeys/skagway.jpg"
+            alt="Skagway Alaska"
+          >
+
+          <figcaption>
+            Skagway, Alaska
+          </figcaption>
+
+        </figure>
+
+
+        <!-- ST. KITTS -->
+
+        <figure>
+
+          <img
+            src="images/journeys/st.kitts.jpg"
+            alt="Saint Kitts"
+          >
+
+          <figcaption>
+            St. Kitts
+          </figcaption>
+
+        </figure>
+
+
+        <!-- ICELAND -->
+
+        <figure>
+
+          <img
+            src="images/journeys/iceland.jpg"
+            alt="Traveling in Iceland"
+          >
+
+          <figcaption>
+            Iceland
+          </figcaption>
+
+        </figure>
+
+
+        <!-- ALASKA -->
+
+        <figure>
+
+          <img
+            src="images/journeys/alaska.jpg"
+            alt="Traveling in Alaska"
+          >
+
+          <figcaption>
+            Alaska
+          </figcaption>
+
+        </figure>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- FOLLOW -->
+
+    <div class="follow-card">
+
+      <h2>
+        The Journey Is Still Happening
+      </h2>
+
+      <p>
+        This page is the highlight reel. The daily version is considerably
+        less organized. I share where I am, what I'm doing, the people I meet,
+        wildlife encounters, cruise life, mishaps and everything in between
+        on social media.
+      </p>
+
+      <a
+        href="follow.html"
+        class="follow-button"
+      >
+        Follow the Daily Journey →
+      </a>
+
+    </div>
+
+
+    <!-- SOCIAL ICONS -->
+
+    <div class="social-icons">
+
+      <a
+        class="facebook"
+        href="https://www.facebook.com/jellyuntethered"
+        target="_blank"
+        aria-label="Facebook"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a
+        class="instagram"
+        href="https://www.instagram.com/jelly_untethered/"
+        target="_blank"
+        aria-label="Instagram"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a
+        class="tiktok"
+        href="https://www.tiktok.com/@jelly_untethered"
+        target="_blank"
+        aria-label="TikTok"
+      >
+        <i class="fab fa-tiktok"></i>
+      </a>
+
+      <a
+        class="youtube"
+        href="https://www.youtube.com/@jelly_untethered"
+        target="_blank"
+        aria-label="YouTube"
+      >
+        <i class="fab fa-youtube"></i>
+      </a>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer-note">
+
+      Still untethered. Still wandering.
+
+      <div class="footer-categories">
+        TRAVEL • CRUISES • WILDLIFE • CULTURE • SARCASM • HUMOR
+      </div>
+
+    </div>
+
+
   </div>
 
-
-  <div class="gallery">
-
-
-    <figure>
-
-      <img
-        src="images/journeys/Armenia.jpg"
-        alt="Traveling in Armenia"
-      >
-
-      <figcaption>
-        Armenia
-      </figcaption>
-
-    </figure>
-
-
-    <figure>
-
-      <img
-        src="images/journeys/denmark.jpg"
-        alt="Traveling in Denmark"
-      >
-
-      <figcaption>
-        Denmark
-      </figcaption>
-
-    </figure>
-
-
-    <figure>
-
-      <img
-        src="images/journeys/pisa.jpg"
-        alt="Pisa Italy"
-      >
-
-      <figcaption>
-        Pisa, Italy
-      </figcaption>
-
-    </figure>
-
-
-    <figure>
-
-      <img
-        src="images/journeys/skagway.jpg"
-        alt="Skagway Alaska"
-      >
-
-      <figcaption>
-        Skagway, Alaska
-      </figcaption>
-
-    </figure>
-
-
-    <figure>
-
-      <img
-        src="images/journeys/st.kitts.jpg"
-        alt="Saint Kitts"
-      >
-
-      <figcaption>
-        St. Kitts
-      </figcaption>
-
-    </figure>
-
-
-    <figure>
-
-      <img
-        src="images/journeys/iceland.jpg"
-        alt="Traveling in Iceland"
-      >
-
-      <figcaption>
-        Iceland
-      </figcaption>
-
-    </figure>
-
-
-    <figure>
-
-      <img
-        src="images/journeys/alaska.jpg"
-        alt="Traveling in Alaska"
-      >
-
-      <figcaption>
-        Alaska
-      </figcaption>
-
-    </figure>
-
-
-  </div>
-
-</section>
+</body>
+</html>
