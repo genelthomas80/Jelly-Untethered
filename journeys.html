@@ -21,12 +21,9 @@
 
     body {
       font-family: Arial, sans-serif;
-
       color: #092f55;
-
       padding: 35px 20px 50px;
       margin: 0;
-
       min-height: 100vh;
 
       background:
@@ -35,19 +32,16 @@
           rgba(42, 157, 190, 0.25),
           transparent 30%
         ),
-
         radial-gradient(
           circle at 95% 20%,
           rgba(245, 181, 27, 0.14),
           transparent 27%
         ),
-
         radial-gradient(
           circle at 90% 85%,
           rgba(232, 120, 34, 0.22),
           transparent 33%
         ),
-
         linear-gradient(
           180deg,
           #fff9eb 0%,
@@ -73,37 +67,24 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-
       gap: 10px;
-
       margin-bottom: 30px;
-
       text-align: center;
-
       position: relative;
       z-index: 10;
     }
 
     nav a {
       display: inline-block;
-
       padding: 10px 16px;
-
       background: rgba(255,255,255,0.88);
-
       border: 1px solid rgba(9,47,85,0.15);
-
       border-radius: 999px;
-
       text-decoration: none;
-
       color: #092f55;
-
       font-weight: 700;
       font-size: 0.95em;
-
-      box-shadow:
-        0 5px 14px rgba(9,47,85,0.08);
+      box-shadow: 0 5px 14px rgba(9,47,85,0.08);
 
       transition:
         transform 0.15s ease,
@@ -113,17 +94,13 @@
 
     nav a:hover {
       transform: translateY(-2px);
-
       background: #e87822;
-
       color: #ffffff;
     }
 
     nav a.active {
       background: #092f55;
-
       color: #ffffff;
-
       border-color: #092f55;
     }
 
@@ -133,9 +110,7 @@
     .logo {
       max-width: 220px;
       width: 65%;
-
       margin: 0 auto 18px;
-
       display: block;
     }
 
@@ -148,34 +123,24 @@
 
     h1 {
       font-size: clamp(2.2rem, 4vw, 3.2rem);
-
       margin: 0;
-
       color: #092f55;
-
       letter-spacing: 0.3px;
     }
 
     .gold-line {
       width: 85px;
       height: 4px;
-
       margin: 14px auto 18px;
-
       background: #f5b51b;
-
       border-radius: 5px;
     }
 
     .intro {
       max-width: 760px;
-
       margin: 0 auto;
-
       color: #526979;
-
       line-height: 1.75;
-
       font-size: 1.08rem;
     }
 
@@ -184,120 +149,94 @@
 
     .travel-stats {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 16px;
-
       margin: 35px auto;
-
       max-width: 800px;
     }
 
     .stat {
       padding: 22px 15px;
-
       text-align: center;
-
       background: rgba(255,255,255,0.88);
-
       border: 1px solid rgba(9,47,85,0.10);
-
       border-radius: 18px;
-
-      box-shadow:
-        0 7px 20px rgba(9,47,85,0.08);
+      box-shadow: 0 7px 20px rgba(9,47,85,0.08);
     }
 
     .stat i {
       display: block;
-
       margin-bottom: 10px;
-
       color: #e87822;
-
       font-size: 27px;
     }
 
     .stat-title {
       font-weight: 800;
-
       color: #092f55;
-
       font-size: 1rem;
     }
 
     .stat-text {
       margin-top: 6px;
-
       color: #667785;
-
       font-size: 0.9rem;
-
       line-height: 1.4;
     }
 
 
-    /* SECTION */
+    /* SECTIONS */
 
     .section {
-      margin-top: 45px;
+      margin-top: 48px;
     }
 
     .section-title {
       text-align: center;
-
       margin-bottom: 8px;
-
       color: #092f55;
-
       font-size: 1.7rem;
     }
 
     .section-subtitle {
       max-width: 700px;
-
       margin: 0 auto 24px;
-
       text-align: center;
-
       color: #667785;
-
       line-height: 1.6;
     }
 
 
-    /* CONTINENTS */
+    /* COUNTRIES */
+
+    .country-group {
+      margin-top: 30px;
+    }
+
+    .continent-heading {
+      text-align: center;
+      color: #092f55;
+      margin: 0 0 14px;
+      font-size: 1.15rem;
+    }
 
     .continents {
       display: flex;
-
       flex-wrap: wrap;
-
       justify-content: center;
-
       gap: 10px;
-
-      max-width: 800px;
-
+      max-width: 850px;
       margin: 0 auto;
     }
 
     .continent {
       padding: 11px 18px;
-
       background: rgba(255,255,255,0.90);
-
       border: 1px solid rgba(9,47,85,0.12);
-
       border-radius: 999px;
-
       color: #092f55;
-
       font-weight: 700;
-
-      box-shadow:
-        0 4px 12px rgba(9,47,85,0.07);
+      box-shadow: 0 4px 12px rgba(9,47,85,0.07);
     }
 
 
@@ -305,29 +244,19 @@
 
     .highlights {
       display: flex;
-
       flex-wrap: wrap;
-
       justify-content: center;
-
       gap: 10px;
-
       max-width: 900px;
-
       margin: 0 auto;
     }
 
     .highlight {
       padding: 10px 16px;
-
       border-radius: 999px;
-
       background: #092f55;
-
       color: #ffffff;
-
       font-weight: 700;
-
       font-size: 0.92rem;
     }
 
@@ -344,38 +273,25 @@
 
     .gallery {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 14px;
-
       margin-top: 25px;
     }
 
     .gallery figure {
       position: relative;
-
       margin: 0;
-
       border-radius: 16px;
-
       overflow: hidden;
-
       background: #ffffff;
-
-      box-shadow:
-        0 7px 18px rgba(9,47,85,0.12);
+      box-shadow: 0 7px 18px rgba(9,47,85,0.12);
     }
 
     .gallery img {
       display: block;
-
       width: 100%;
-
       height: 240px;
-
       object-fit: cover;
-
       transition: transform 0.3s ease;
     }
 
@@ -385,15 +301,10 @@
 
     .gallery figcaption {
       padding: 11px 12px;
-
       text-align: center;
-
       color: #526979;
-
       background: rgba(255,255,255,0.96);
-
       font-size: 0.9rem;
-
       font-weight: 700;
     }
 
@@ -402,54 +313,35 @@
 
     .follow-card {
       max-width: 800px;
-
       margin: 50px auto 0;
-
       padding: 32px 28px;
-
       text-align: center;
-
       background: rgba(255,255,255,0.90);
-
       border: 1px solid rgba(9,47,85,0.10);
-
       border-radius: 22px;
-
-      box-shadow:
-        0 9px 25px rgba(9,47,85,0.10);
+      box-shadow: 0 9px 25px rgba(9,47,85,0.10);
     }
 
     .follow-card h2 {
       margin: 0 0 12px;
-
       color: #092f55;
     }
 
     .follow-card p {
       max-width: 620px;
-
       margin: 0 auto;
-
       color: #526979;
-
       line-height: 1.7;
     }
 
     .follow-button {
       display: inline-block;
-
       margin-top: 20px;
-
       padding: 12px 22px;
-
       background: #092f55;
-
       color: #ffffff;
-
       border-radius: 999px;
-
       text-decoration: none;
-
       font-weight: 800;
 
       transition:
@@ -459,7 +351,6 @@
 
     .follow-button:hover {
       transform: translateY(-2px);
-
       background: #e87822;
     }
 
@@ -468,32 +359,21 @@
 
     .social-icons {
       margin-top: 24px;
-
       text-align: center;
     }
 
     .social-icons a {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
       width: 50px;
       height: 50px;
-
       margin: 0 5px;
-
       border-radius: 50%;
-
       background: rgba(255,255,255,0.92);
-
       text-decoration: none;
-
       font-size: 26px;
-
-      box-shadow:
-        0 5px 14px rgba(9,47,85,0.10);
-
+      box-shadow: 0 5px 14px rgba(9,47,85,0.10);
       transition: transform 0.2s ease;
     }
 
@@ -522,27 +402,18 @@
 
     .footer-note {
       margin-top: 35px;
-
       padding-top: 22px;
-
       border-top: 1px solid rgba(9,47,85,0.12);
-
       text-align: center;
-
       color: #667785;
-
       font-size: 0.95rem;
     }
 
     .footer-categories {
       margin-top: 7px;
-
       color: #092f55;
-
       font-size: 0.78em;
-
       font-weight: bold;
-
       letter-spacing: 1px;
     }
 
@@ -553,19 +424,16 @@
 
       body {
         padding: 22px 14px 40px;
-
         background-attachment: scroll;
       }
 
       nav {
         gap: 7px;
-
         margin-bottom: 23px;
       }
 
       nav a {
         padding: 8px 11px;
-
         font-size: 0.83em;
       }
 
@@ -583,6 +451,11 @@
 
       .gallery img {
         height: 190px;
+      }
+
+      .continent {
+        padding: 9px 13px;
+        font-size: 0.9rem;
       }
 
     }
@@ -727,30 +600,155 @@
     </div>
 
 
-    <!-- CONTINENTS -->
+    <!-- COUNTRIES & DESTINATIONS -->
 
     <section class="section">
 
       <h2 class="section-title">
-        Across the Map
+        Countries & Destinations
       </h2>
 
       <div class="section-subtitle">
-        The list keeps growing. That's rather the point.
+        A growing list of places I've been lucky enough to experience.
+        Some were vacations. Some were adventures. These days, it's simply life.
       </div>
 
-      <div class="continents">
 
-        <div class="continent">
-          🌎 North America
+      <!-- NORTH AMERICA, CENTRAL AMERICA & CARIBBEAN -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🌎 North America, Central America & Caribbean
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">Antigua and Barbuda</div>
+          <div class="continent">Bahamas</div>
+          <div class="continent">Canada</div>
+          <div class="continent">Costa Rica</div>
+          <div class="continent">Dominica</div>
+          <div class="continent">Dominican Republic</div>
+          <div class="continent">El Salvador</div>
+          <div class="continent">Guatemala</div>
+          <div class="continent">Jamaica</div>
+          <div class="continent">Mexico</div>
+          <div class="continent">Panama</div>
+          <div class="continent">Saint Kitts and Nevis</div>
+          <div class="continent">Saint Lucia</div>
+          <div class="continent">United States</div>
+
         </div>
 
-        <div class="continent">
+      </div>
+
+
+      <!-- SOUTH AMERICA -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🌎 South America
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">Colombia</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- EUROPE -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
           🌍 Europe
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">Belgium</div>
+          <div class="continent">Croatia</div>
+          <div class="continent">Denmark</div>
+          <div class="continent">Estonia</div>
+          <div class="continent">Finland</div>
+          <div class="continent">France</div>
+          <div class="continent">Germany</div>
+          <div class="continent">Greece</div>
+          <div class="continent">Iceland</div>
+          <div class="continent">Ireland</div>
+          <div class="continent">Italy</div>
+          <div class="continent">Luxembourg</div>
+          <div class="continent">Malta</div>
+          <div class="continent">Netherlands</div>
+          <div class="continent">Norway</div>
+          <div class="continent">Portugal</div>
+          <div class="continent">Spain</div>
+          <div class="continent">Sweden</div>
+          <div class="continent">United Kingdom</div>
+          <div class="continent">Vatican City</div>
+
         </div>
 
-        <div class="continent">
-          🌏 Asia
+      </div>
+
+
+      <!-- EUROPE & ASIA -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🌍 Europe & Asia
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">Armenia</div>
+          <div class="continent">Turkey</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- AFRICA -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🌍 Africa
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">Morocco</div>
+
+        </div>
+
+      </div>
+
+
+      <!-- TERRITORIES & ISLANDS -->
+
+      <div class="country-group">
+
+        <h3 class="continent-heading">
+          🧭 Territories & Islands
+        </h3>
+
+        <div class="continents">
+
+          <div class="continent">British Virgin Islands</div>
+          <div class="continent">Cayman Islands</div>
+          <div class="continent">Gibraltar</div>
+          <div class="continent">Puerto Rico</div>
+          <div class="continent">Turks and Caicos Islands</div>
+          <div class="continent">U.S. Virgin Islands</div>
+
         </div>
 
       </div>
