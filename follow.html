@@ -5,11 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Follow Jelly Untethered</title>
+  <title>Follow | Jelly Untethered</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
 
   <style>
 
@@ -19,28 +21,98 @@
 
     body {
       margin: 0;
-      padding: 35px 20px;
-
+      padding: 35px 20px 50px;
       min-height: 100vh;
 
       font-family: Arial, Helvetica, sans-serif;
-
-      background:
-        linear-gradient(
-          180deg,
-          #fffaf0 0%,
-          #f6eddc 100%
-        );
-
       color: #092f55;
 
-      display: flex;
-      justify-content: center;
+      background:
+        radial-gradient(
+          circle at 5% 10%,
+          rgba(42, 157, 190, 0.25),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 95% 20%,
+          rgba(245, 181, 27, 0.14),
+          transparent 27%
+        ),
+        radial-gradient(
+          circle at 90% 85%,
+          rgba(232, 120, 34, 0.22),
+          transparent 33%
+        ),
+        linear-gradient(
+          180deg,
+          #fff9eb 0%,
+          #f7ecd5 48%,
+          #fff8e9 100%
+        );
+
+      background-attachment: fixed;
     }
+
+
+    /* MAIN CONTAINER */
 
     .container {
       width: 100%;
-      max-width: 520px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(9,47,85,0.15);
+      border-radius: 999px;
+      text-decoration: none;
+      color: #092f55;
+      font-weight: 700;
+      font-size: 0.95em;
+      box-shadow: 0 5px 14px rgba(9,47,85,0.08);
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        color 0.15s ease;
+    }
+
+    nav a:hover {
+      transform: translateY(-2px);
+      background: #e87822;
+      color: #ffffff;
+    }
+
+    nav a.active {
+      background: #092f55;
+      color: #ffffff;
+      border-color: #092f55;
+    }
+
+
+    /* CONTENT WIDTH */
+
+    .follow-content {
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
       text-align: center;
     }
 
@@ -50,7 +122,8 @@
     .logo {
       width: 220px;
       max-width: 65%;
-      margin-bottom: 5px;
+      margin: 0 auto 10px;
+      display: block;
     }
 
 
@@ -58,78 +131,65 @@
 
     h1 {
       margin: 8px 0 5px;
-
-      font-size: 34px;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
       color: #092f55;
     }
 
     .gold-line {
-      width: 80px;
-      height: 3px;
-
-      background: #f4b41a;
-
-      margin: 12px auto 16px;
-
+      width: 85px;
+      height: 4px;
+      background: #f5b51b;
+      margin: 14px auto 18px;
       border-radius: 5px;
     }
 
     .intro {
-      font-size: 17px;
-      line-height: 1.5;
-
-      margin-bottom: 25px;
-
-      color: #334d66;
+      max-width: 520px;
+      margin: 0 auto 28px;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #526979;
     }
 
 
     /* SOCIAL CARDS */
 
     .social-card {
-
       display: flex;
       align-items: center;
-
       width: 100%;
-
       padding: 15px 18px;
       margin: 13px 0;
 
-      background: white;
+      background: rgba(255,255,255,0.92);
 
-      border-radius: 15px;
+      border-radius: 17px;
+      border: 1px solid rgba(9,47,85,0.10);
 
       text-decoration: none;
-
       color: #092f55;
 
       box-shadow:
-        0 3px 12px rgba(0,0,0,.10);
-
-      border: 1px solid #eee5d6;
+        0 6px 17px rgba(9,47,85,0.10);
 
       transition:
-        transform .15s ease,
-        box-shadow .15s ease;
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
     }
 
     .social-card:hover {
-
       transform: translateY(-2px);
 
       box-shadow:
-        0 6px 16px rgba(0,0,0,.15);
+        0 10px 22px rgba(9,47,85,0.15);
     }
 
 
     /* ICONS */
 
     .icon {
-
       width: 52px;
       height: 52px;
-
       min-width: 52px;
 
       border-radius: 50%;
@@ -139,8 +199,7 @@
       justify-content: center;
 
       font-size: 27px;
-
-      color: white;
+      color: #ffffff;
 
       margin-right: 16px;
     }
@@ -180,14 +239,16 @@
     }
 
     .card-title {
-      font-size: 19px;
-      font-weight: bold;
+      font-size: 1.15rem;
+      font-weight: 800;
       margin-bottom: 3px;
+      color: #092f55;
     }
 
     .card-description {
-      font-size: 14px;
-      color: #6b7783;
+      font-size: 0.88rem;
+      color: #667785;
+      line-height: 1.4;
     }
 
 
@@ -195,60 +256,131 @@
 
     .arrow {
       margin-left: auto;
-
-      font-size: 17px;
-
-      color: #d99b00;
+      padding-left: 12px;
+      font-size: 22px;
+      color: #e87822;
     }
 
 
-    /* WEBSITE */
+    /* WEBSITE BOX */
 
     .website-box {
-
-      margin-top: 28px;
-
-      padding: 20px;
+      margin-top: 30px;
+      padding: 23px 20px;
 
       background: #092f55;
+      color: #ffffff;
 
-      color: white;
+      border-radius: 18px;
 
-      border-radius: 15px;
+      box-shadow:
+        0 8px 20px rgba(9,47,85,0.16);
+    }
+
+    .website-box p {
+      margin: 0 0 12px;
+      line-height: 1.5;
     }
 
     .website-box a {
-
-      color: #ffd34e;
-
+      color: #f5b51b;
       text-decoration: none;
+      font-weight: 800;
+      font-size: 1.08rem;
+    }
 
-      font-weight: bold;
+    .website-box a:hover {
+      color: #ffffff;
+    }
 
-      font-size: 18px;
+
+    /* AMAZON DISCLOSURE */
+
+    .affiliate-note {
+      margin: 15px auto 0;
+      max-width: 500px;
+      color: #667785;
+      font-size: 0.78rem;
+      line-height: 1.5;
     }
 
 
     /* FOOTER */
 
     .footer {
+      margin-top: 35px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(9,47,85,0.12);
 
-      margin-top: 27px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #667785;
+    }
 
-      font-size: 14px;
-
-      color: #596b7c;
+    .footer strong {
+      color: #526979;
     }
 
     .categories {
-
       margin-top: 8px;
 
-      font-size: 13px;
-
+      font-size: 0.78em;
       font-weight: bold;
 
       color: #092f55;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      body {
+        padding: 22px 14px 40px;
+        background-attachment: scroll;
+      }
+
+      nav {
+        gap: 7px;
+        margin-bottom: 23px;
+      }
+
+      nav a {
+        padding: 8px 11px;
+        font-size: 0.83em;
+      }
+
+      .logo {
+        max-width: 190px;
+      }
+
+    }
+
+
+    @media (max-width: 420px) {
+
+      .social-card {
+        padding: 13px 14px;
+      }
+
+      .icon {
+        width: 47px;
+        height: 47px;
+        min-width: 47px;
+        font-size: 24px;
+        margin-right: 13px;
+      }
+
+      .card-title {
+        font-size: 1.05rem;
+      }
+
+      .card-description {
+        font-size: 0.82rem;
+      }
+
     }
 
   </style>
@@ -257,214 +389,267 @@
 
 <body>
 
-<div class="container">
+  <div class="container">
 
 
-  <!-- LOGO -->
+    <!-- NAVIGATION -->
 
-  <img
-    src="logo.png"
-    alt="Jelly Untethered"
-    class="logo"
-  >
+    <nav>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About Me
+      </a>
+
+      <a href="journeys.html">
+        Where I've Been
+      </a>
+
+      <a href="merch.html">
+        Merch
+      </a>
+
+      <a href="support.html">
+        Support
+      </a>
+
+      <a class="active" href="follow.html">
+        Follow
+      </a>
+
+    </nav>
 
 
-  <!-- INTRO -->
+    <div class="follow-content">
 
-  <h1>Follow the Journey</h1>
 
-  <div class="gold-line"></div>
+      <!-- LOGO -->
 
-  <div class="intro">
-    Traveling the world, collecting stories
-    and probably getting into some nonsense along the way.
+      <img
+        src="logo.png"
+        alt="Jelly Untethered"
+        class="logo"
+      >
+
+
+      <!-- INTRO -->
+
+      <h1>
+        Follow the Journey
+      </h1>
+
+      <div class="gold-line"></div>
+
+      <div class="intro">
+        Traveling the world, collecting stories and probably
+        getting into some nonsense along the way.
+      </div>
+
+
+      <!-- FACEBOOK -->
+
+      <a
+        class="social-card"
+        href="https://www.facebook.com/jellyuntethered"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="icon facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </div>
+
+        <div class="card-text">
+
+          <div class="card-title">
+            Facebook
+          </div>
+
+          <div class="card-description">
+            Daily stories & adventures
+          </div>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </a>
+
+
+      <!-- INSTAGRAM -->
+
+      <a
+        class="social-card"
+        href="https://www.instagram.com/jelly_untethered/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="icon instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+
+        <div class="card-text">
+
+          <div class="card-title">
+            Instagram
+          </div>
+
+          <div class="card-description">
+            Photos, reels & travel moments
+          </div>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </a>
+
+
+      <!-- TIKTOK -->
+
+      <a
+        class="social-card"
+        href="https://www.tiktok.com/@jelly_untethered"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="icon tiktok">
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+
+        <div class="card-text">
+
+          <div class="card-title">
+            TikTok
+          </div>
+
+          <div class="card-description">
+            Travel, humor & assorted nonsense
+          </div>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </a>
+
+
+      <!-- YOUTUBE -->
+
+      <a
+        class="social-card"
+        href="https://www.youtube.com/@jelly_untethered"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="icon youtube">
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+
+        <div class="card-text">
+
+          <div class="card-title">
+            YouTube
+          </div>
+
+          <div class="card-description">
+            Watch the journey
+          </div>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </a>
+
+
+      <!-- AMAZON -->
+
+      <a
+        class="social-card"
+        href="https://a.co/d/0fnFenxN"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <div class="icon amazon">
+          <i class="fa-brands fa-amazon"></i>
+        </div>
+
+        <div class="card-text">
+
+          <div class="card-title">
+            Amazon Storefront
+          </div>
+
+          <div class="card-description">
+            My travel gear & favorites
+          </div>
+
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+
+      </a>
+
+
+      <!-- AMAZON DISCLOSURE -->
+
+      <div class="affiliate-note">
+        As an Amazon Associate, I may earn from qualifying purchases
+        made through my storefront, at no additional cost to you.
+      </div>
+
+
+      <!-- MAIN WEBSITE -->
+
+      <div class="website-box">
+
+        <p>
+          Want to explore more?
+        </p>
+
+        <a href="index.html">
+          JellyUntethered.com →
+        </a>
+
+      </div>
+
+
+      <!-- FOOTER -->
+
+      <div class="footer">
+
+        <strong>
+          Traveling the world. Collecting stories along the way.
+        </strong>
+
+        <div class="categories">
+          TRAVEL • CRUISES • WILDLIFE • CULTURE • SARCASM • HUMOR
+        </div>
+
+      </div>
+
+
+    </div>
+
   </div>
-
-
-  <!-- FACEBOOK -->
-
-  <a
-    class="social-card"
-    href="https://www.facebook.com/jellyuntethered"
-    target="_blank"
-  >
-
-    <div class="icon facebook">
-      <i class="fa-brands fa-facebook-f"></i>
-    </div>
-
-    <div class="card-text">
-
-      <div class="card-title">
-        Facebook
-      </div>
-
-      <div class="card-description">
-        Daily stories & adventures
-      </div>
-
-    </div>
-
-    <div class="arrow">
-      ›
-    </div>
-
-  </a>
-
-
-  <!-- INSTAGRAM -->
-
-  <a
-    class="social-card"
-    href="https://www.instagram.com/jelly_untethered/"
-    target="_blank"
-  >
-
-    <div class="icon instagram">
-      <i class="fa-brands fa-instagram"></i>
-    </div>
-
-    <div class="card-text">
-
-      <div class="card-title">
-        Instagram
-      </div>
-
-      <div class="card-description">
-        Photos, reels & travel moments
-      </div>
-
-    </div>
-
-    <div class="arrow">
-      ›
-    </div>
-
-  </a>
-
-
-  <!-- TIKTOK -->
-
-  <a
-    class="social-card"
-    href="https://www.tiktok.com/@jelly_untethered"
-    target="_blank"
-  >
-
-    <div class="icon tiktok">
-      <i class="fa-brands fa-tiktok"></i>
-    </div>
-
-    <div class="card-text">
-
-      <div class="card-title">
-        TikTok
-      </div>
-
-      <div class="card-description">
-        Travel, humor & assorted nonsense
-      </div>
-
-    </div>
-
-    <div class="arrow">
-      ›
-    </div>
-
-  </a>
-
-
-  <!-- YOUTUBE -->
-
-  <a
-    class="social-card"
-    href="https://www.youtube.com/@jelly_untethered"
-    target="_blank"
-  >
-
-    <div class="icon youtube">
-      <i class="fa-brands fa-youtube"></i>
-    </div>
-
-    <div class="card-text">
-
-      <div class="card-title">
-        YouTube
-      </div>
-
-      <div class="card-description">
-        Watch the journey
-      </div>
-
-    </div>
-
-    <div class="arrow">
-      ›
-    </div>
-
-  </a>
-
-
-  <!-- AMAZON -->
-
-  <a
-    class="social-card"
-    href="https://a.co/d/0fnFenxN"
-    target="_blank"
-  >
-
-    <div class="icon amazon">
-      <i class="fa-brands fa-amazon"></i>
-    </div>
-
-    <div class="card-text">
-
-      <div class="card-title">
-        Amazon Storefront
-      </div>
-
-      <div class="card-description">
-        My travel gear & favorites
-      </div>
-
-    </div>
-
-    <div class="arrow">
-      ›
-    </div>
-
-  </a>
-
-
-  <!-- MAIN WEBSITE -->
-
-  <div class="website-box">
-
-    Want to explore more?<br><br>
-
-    <a href="https://jellyuntethered.com">
-      JellyUntethered.com →
-    </a>
-
-  </div>
-
-
-  <!-- FOOTER -->
-
-  <div class="footer">
-
-    <strong>
-      Traveling the world. Collecting stories along the way.
-    </strong>
-
-    <div class="categories">
-      TRAVEL • CRUISES • WILDLIFE • CULTURE • SARCASM • HUMOR
-    </div>
-
-  </div>
-
-
-</div>
 
 </body>
 
