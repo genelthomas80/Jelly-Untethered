@@ -2,811 +2,1060 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Journeys | Jelly Untethered</title>
+
+  <title>Where I've Been | Jelly Untethered</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
-      color: #333;
-      padding: 50px 20px;
-      margin: 0;
+
+    * {
+      box-sizing: border-box;
     }
 
-    .container { max-width: 1000px; margin: 0 auto; }
+    body {
+      font-family: Arial, sans-serif;
 
-    /* Mobile-friendly navigation (matches Home/About) */
+      color: #092f55;
+
+      padding: 35px 20px 50px;
+      margin: 0;
+
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 5% 10%,
+          rgba(42, 157, 190, 0.25),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 95% 20%,
+          rgba(245, 181, 27, 0.14),
+          transparent 27%
+        ),
+
+        radial-gradient(
+          circle at 90% 85%,
+          rgba(232, 120, 34, 0.22),
+          transparent 33%
+        ),
+
+        linear-gradient(
+          180deg,
+          #fff9eb 0%,
+          #f7ecd5 48%,
+          #fff8e9 100%
+        );
+
+      background-attachment: fixed;
+    }
+
+
+    /* MAIN CONTAINER */
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+
+    /* NAVIGATION */
+
     nav {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
+
       gap: 10px;
-      margin: 10px 0 30px;
+
+      margin-bottom: 30px;
+
       text-align: center;
+
+      position: relative;
+      z-index: 10;
     }
 
     nav a {
       display: inline-block;
-      padding: 10px 14px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid #e5e7eb;
+
+      padding: 10px 16px;
+
+      background: rgba(255,255,255,0.88);
+
+      border: 1px solid rgba(9,47,85,0.15);
+
       border-radius: 999px;
+
       text-decoration: none;
-      color: #111827;
+
+      color: #092f55;
+
       font-weight: 700;
-      font-size: 0.98em;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-      transition: transform 0.15s ease, opacity 0.15s ease;
+      font-size: 0.95em;
+
+      box-shadow:
+        0 5px 14px rgba(9,47,85,0.08);
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        color 0.15s ease;
     }
 
     nav a:hover {
-      transform: translateY(-1px);
-      opacity: 0.92;
-    }
+      transform: translateY(-2px);
 
-    nav a:active {
-      transform: scale(0.98);
+      background: #e87822;
+
+      color: #ffffff;
     }
 
     nav a.active {
-      background: #111827;
+      background: #092f55;
+
       color: #ffffff;
-      border-color: #111827;
+
+      border-color: #092f55;
     }
 
-    h1 { text-align: center; font-size: 2.6em; margin: 0; letter-spacing: 0.5px; }
 
-    .intro {
-      text-align: center;
-      margin: 14px auto 0;
-      max-width: 780px;
-      color: #555;
-      line-height: 1.5;
-      font-size: 1.05em;
-    }
+    /* LOGO */
 
-    hr.divider {
-      margin: 35px auto 30px;
-      width: 60px;
-      border: none;
-      height: 3px;
-      background: #ddd;
-      border-radius: 3px;
-    }
+    .logo {
+      max-width: 220px;
+      width: 65%;
 
-    .trip {
-      background: rgba(255,255,255,0.75);
-      border: 1px solid #e6e6e6;
-      border-radius: 14px;
-      padding: 18px 18px 10px;
-      margin: 18px auto;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-    }
+      margin: 0 auto 18px;
 
-    .trip-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .trip-title { font-size: 1.35em; margin: 0; }
-    .trip-meta { color: #666; font-size: 0.98em; margin: 0; }
-    .trip-notes { margin: 0 0 14px; color: #555; line-height: 1.5; }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      padding: 0;
-      margin: 0;
-    }
-
-    @media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
-
-    @media (max-width: 560px) {
-      .gallery { grid-template-columns: 1fr; }
-      body { padding: 36px 16px; }
-    }
-
-    figure {
-      margin: 0;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid #eee;
-    }
-
-    figure img {
-      width: 100%;
-      height: auto;
       display: block;
     }
 
-    figcaption {
-      padding: 10px 12px;
-      font-size: 0.95em;
-      color: #555;
-      line-height: 1.35;
-    }
 
-    /* SOCIAL SECTION */
-    .social-section {
-      margin-top: 42px;
+    /* HEADER */
+
+    .page-header {
       text-align: center;
     }
 
-    .social-title {
-      font-size: 1.15em;
-      font-weight: bold;
-      margin-top: 0;
-      margin-bottom: 14px;
-      color: #444;
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+
+      margin: 0;
+
+      color: #092f55;
+
+      letter-spacing: 0.3px;
     }
 
+    .gold-line {
+      width: 85px;
+      height: 4px;
+
+      margin: 14px auto 18px;
+
+      background: #f5b51b;
+
+      border-radius: 5px;
+    }
+
+    .intro {
+      max-width: 760px;
+
+      margin: 0 auto;
+
+      color: #526979;
+
+      line-height: 1.75;
+
+      font-size: 1.08rem;
+    }
+
+
+    /* TRAVEL STATS */
+
+    .travel-stats {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 16px;
+
+      margin: 35px auto;
+
+      max-width: 800px;
+    }
+
+    .stat {
+      padding: 22px 15px;
+
+      text-align: center;
+
+      background: rgba(255,255,255,0.88);
+
+      border: 1px solid rgba(9,47,85,0.10);
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 7px 20px rgba(9,47,85,0.08);
+    }
+
+    .stat i {
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: #e87822;
+
+      font-size: 27px;
+    }
+
+    .stat-title {
+      font-weight: 800;
+
+      color: #092f55;
+
+      font-size: 1rem;
+    }
+
+    .stat-text {
+      margin-top: 6px;
+
+      color: #667785;
+
+      font-size: 0.9rem;
+
+      line-height: 1.4;
+    }
+
+
+    /* SECTION */
+
+    .section {
+      margin-top: 45px;
+    }
+
+    .section-title {
+      text-align: center;
+
+      margin-bottom: 8px;
+
+      color: #092f55;
+
+      font-size: 1.7rem;
+    }
+
+    .section-subtitle {
+      max-width: 700px;
+
+      margin: 0 auto 24px;
+
+      text-align: center;
+
+      color: #667785;
+
+      line-height: 1.6;
+    }
+
+
+    /* CONTINENTS */
+
+    .continents {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 10px;
+
+      max-width: 800px;
+
+      margin: 0 auto;
+    }
+
+    .continent {
+      padding: 11px 18px;
+
+      background: rgba(255,255,255,0.90);
+
+      border: 1px solid rgba(9,47,85,0.12);
+
+      border-radius: 999px;
+
+      color: #092f55;
+
+      font-weight: 700;
+
+      box-shadow:
+        0 4px 12px rgba(9,47,85,0.07);
+    }
+
+
+    /* HIGHLIGHTS */
+
+    .highlights {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 10px;
+
+      max-width: 900px;
+
+      margin: 0 auto;
+    }
+
+    .highlight {
+      padding: 10px 16px;
+
+      border-radius: 999px;
+
+      background: #092f55;
+
+      color: #ffffff;
+
+      font-weight: 700;
+
+      font-size: 0.92rem;
+    }
+
+    .highlight:nth-child(even) {
+      background: #2a9dbe;
+    }
+
+    .highlight:nth-child(3n) {
+      background: #e87822;
+    }
+
+
+    /* PHOTO GALLERY */
+
+    .gallery {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 14px;
+
+      margin-top: 25px;
+    }
+
+    .gallery figure {
+      position: relative;
+
+      margin: 0;
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 7px 18px rgba(9,47,85,0.12);
+    }
+
+    .gallery img {
+      display: block;
+
+      width: 100%;
+
+      height: 240px;
+
+      object-fit: cover;
+
+      transition: transform 0.3s ease;
+    }
+
+    .gallery figure:hover img {
+      transform: scale(1.035);
+    }
+
+    .gallery figcaption {
+      padding: 11px 12px;
+
+      text-align: center;
+
+      color: #526979;
+
+      background: rgba(255,255,255,0.96);
+
+      font-size: 0.9rem;
+
+      font-weight: 700;
+    }
+
+
+    /* FOLLOW CARD */
+
+    .follow-card {
+      max-width: 800px;
+
+      margin: 50px auto 0;
+
+      padding: 32px 28px;
+
+      text-align: center;
+
+      background: rgba(255,255,255,0.90);
+
+      border: 1px solid rgba(9,47,85,0.10);
+
+      border-radius: 22px;
+
+      box-shadow:
+        0 9px 25px rgba(9,47,85,0.10);
+    }
+
+    .follow-card h2 {
+      margin: 0 0 12px;
+
+      color: #092f55;
+    }
+
+    .follow-card p {
+      max-width: 620px;
+
+      margin: 0 auto;
+
+      color: #526979;
+
+      line-height: 1.7;
+    }
+
+    .follow-button {
+      display: inline-block;
+
+      margin-top: 20px;
+
+      padding: 12px 22px;
+
+      background: #092f55;
+
+      color: #ffffff;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-weight: 800;
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .follow-button:hover {
+      transform: translateY(-2px);
+
+      background: #e87822;
+    }
+
+
+    /* SOCIAL ICONS */
+
     .social-icons {
-      margin-top: 8px;
+      margin-top: 24px;
+
+      text-align: center;
     }
 
     .social-icons a {
-      display: inline-block;
-      margin: 0 12px;
-      font-size: 34px;
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 50px;
+      height: 50px;
+
+      margin: 0 5px;
+
+      border-radius: 50%;
+
+      background: rgba(255,255,255,0.92);
+
       text-decoration: none;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+
+      font-size: 26px;
+
+      box-shadow:
+        0 5px 14px rgba(9,47,85,0.10);
+
+      transition: transform 0.2s ease;
     }
 
     .social-icons a:hover {
-      transform: scale(1.15);
-      opacity: 0.85;
+      transform: translateY(-3px) scale(1.05);
     }
 
-    .facebook { color: #1877f2; }
-    .instagram { color: #e1306c; }
-    .tiktok { color: #000000; }
-    .youtube { color: #ff0000; }
+    .facebook {
+      color: #1877f2;
+    }
+
+    .instagram {
+      color: #e1306c;
+    }
+
+    .tiktok {
+      color: #111111;
+    }
+
+    .youtube {
+      color: #ff0000;
+    }
+
+
+    /* FOOTER */
 
     .footer-note {
-      margin-top: 28px;
-      font-size: 0.95em;
-      color: #777;
+      margin-top: 35px;
+
+      padding-top: 22px;
+
+      border-top: 1px solid rgba(9,47,85,0.12);
+
       text-align: center;
+
+      color: #667785;
+
+      font-size: 0.95rem;
     }
+
+    .footer-categories {
+      margin-top: 7px;
+
+      color: #092f55;
+
+      font-size: 0.78em;
+
+      font-weight: bold;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      body {
+        padding: 22px 14px 40px;
+
+        background-attachment: scroll;
+      }
+
+      nav {
+        gap: 7px;
+
+        margin-bottom: 23px;
+      }
+
+      nav a {
+        padding: 8px 11px;
+
+        font-size: 0.83em;
+      }
+
+      .logo {
+        max-width: 190px;
+      }
+
+      .travel-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery img {
+        height: 190px;
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: 240px;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
+
   <div class="container">
 
+
+    <!-- NAVIGATION -->
+
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a class="active" href="journeys.html">Journeys</a>
-      <a href="upcoming.html">Upcoming</a>
-      <a href="merch.html">Merch</a>
-      <a href="support.html">Support</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About Me
+      </a>
+
+      <a class="active" href="journeys.html">
+        Where I've Been
+      </a>
+
+      <a href="merch.html">
+        Merch
+      </a>
+
+      <a href="support.html">
+        Support
+      </a>
+
+      <a href="follow.html">
+        Follow
+      </a>
+
     </nav>
 
-    <h1>Journeys</h1>
-    <div class="intro">
-      A few of my favorite journeys, and the places that stayed with me
+
+    <!-- LOGO -->
+
+    <img
+      src="logo.png"
+      alt="Jelly Untethered logo"
+      class="logo"
+    >
+
+
+    <!-- HEADER -->
+
+    <div class="page-header">
+
+      <h1>
+        Where I've Been
+      </h1>
+
+      <div class="gold-line"></div>
+
+      <div class="intro">
+
+        I started traveling long before I became Jelly Untethered,
+        but somewhere along the way travel stopped being something
+        I did and became how I live.
+
+        <br><br>
+
+        This isn't a complete travel diary. Nobody needs that much
+        scrolling. It's a snapshot of some of the places, landscapes
+        and adventures that have made the journey memorable.
+
+      </div>
+
     </div>
 
-    <hr class="divider">
 
-    <!-- 2007: Puerto Vallarta -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Puerto Vallarta, Mexico</h2>
-        <p class="trip-meta">2007</p>
-      </div>
-      <p class="trip-notes">Sun, salt air, and the early signs I was never meant to stay put.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Puerto Vallarta 1.jpg" alt="Puerto Vallarta 1">
-          <figcaption>Enjoying the sun, salt and tequila!</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Puerto Vallarta 2.jpg" alt="Puerto Vallarta 2">
-          <figcaption>View from the balcony at our all inclusive resort.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Puerto Vallarta 3.jpg" alt="Puerto Vallarta 3">
-          <figcaption>Teeny tiny octopus on a friend's hand</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Puerto Vallarta 4.jpg" alt="Puerto Vallarta 4">
-          <figcaption>Sunset over the Pacific Ocean.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Puerto Vallarta 5.jpg" alt="Puerto Vallarta 5">
-          <figcaption>Colors of sunset</figcaption>
-        </figure>
-      </div>
-    </section>
+    <!-- TRAVEL STYLE -->
 
-    <!-- 2008: Iceland -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Iceland</h2>
-        <p class="trip-meta">2008</p>
-      </div>
-      <p class="trip-notes">Landscapes that make you question every boring choice you’ve ever made.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Iceland 2008 1.JPG" alt="Iceland 2008 1">
-          <figcaption>Iceland being dramatic (as it should) Gullfoss waterfall.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Iceland 2008 2.JPG" alt="Iceland 2008 2">
-          <figcaption>Sunset</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Iceland 2008 3.JPG" alt="Iceland 2008 3">
-          <figcaption>Proof this wasn’t edited. Iceland just does this.</figcaption>
-        </figure>
-      </div>
-    </section>
+    <div class="travel-stats">
 
-    <!-- 2008: Vermont -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Vermont</h2>
-        <p class="trip-meta">2008</p>
-      </div>
-      <p class="trip-notes">Cozy, calm, and suspiciously good for the nervous system.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Ben and Jerry's.jpg" alt="Ben and Jerry's">
-          <figcaption>Ben & Jerry’s. Because priorities.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Flavor graveyard at Ben and Jerry's.jpg" alt="Flavor graveyard">
-          <figcaption>Paying respects at the flavor graveyard.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Lake Champlain.jpg" alt="Lake Champlain">
-          <figcaption>Lake Champlain doing “peaceful” flawlessly.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Sunset at Lake Champlain.jpg" alt="Sunset at Lake Champlain">
-          <figcaption>Sunset, because Vermont loves being photogenic.</figcaption>
-        </figure>
-      </div>
-    </section>
+      <div class="stat">
 
-    <!-- 2009: Grand Canyon -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Grand Canyon</h2>
-        <p class="trip-meta">2009</p>
-      </div>
-      <p class="trip-notes">Pictures don’t do it justice. Humans are tiny. The canyon is not.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Grand Canyon 1.jpg" alt="Grand Canyon 1">
-          <figcaption>Trying to capture “massive” in one frame. You really cannot fathom how large the canyon is until you stand on the edge and see it in person.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Grand Canyon 2.jpg" alt="Grand Canyon 2">
-          <figcaption>Another “how is this real?” moment.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Grand Canyon 3.jpg" alt="Grand Canyon 3">
-          <figcaption>Yes, I took too many photos. No, I’m not sorry.</figcaption>
-        </figure>
-      </div>
-    </section>
+        <i class="fa-solid fa-earth-americas"></i>
 
-    <!-- 2010: Europe -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Europe Adventure</h2>
-        <p class="trip-meta">Amsterdam • Belgium • Germany • Luxembourg • 2010</p>
-      </div>
-      <p class="trip-notes">A multi-country sprint fueled by walking, wonder, and a love for music.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Europe 2010 6.png" alt="Europe 2010 6">
-          <figcaption>Luxembourg</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Europe 2010 7.JPG" alt="Europe 2010 7">
-          <figcaption>Amsterdam</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Europe 2010 8.JPG" alt="Europe 2010 8">
-          <figcaption>The most quintessential Amsterdam photo. Bicycles, boathouses and canal houses</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Europe 2010 9.JPG" alt="Europe 2010 9">
-          <figcaption>Brugge, Belgium</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Europe 2010 10.JPG" alt="Europe 2010 10">
-          <figcaption>Lovely park in Brugge, Belgium</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Europe 2010 11.JPG" alt="Europe 2010 11">
-          <figcaption>Ghent, Belgium</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Europe 2010 12.JPG" alt="Europe 2010 12">
-          <figcaption>Manneken Pis statue in Brussels</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Europe 2010 13.JPG" alt="Europe 2010 13">
-          <figcaption>Royal Palace. I tried to explain that I am a Princess and as such, should be allowed into my home. The guards were having none of it.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Europe 2010 14.JPG" alt="Europe 2010 14">
-          <figcaption>Grand Place, Brussels, Belgium</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Europe 2010 15.JPG" alt="Europe 2010 15">
-          <figcaption>Grand Place, Brussels, Belgium</figcaption>
-        </figure>
-      </div>
-    </section>
+        <div class="stat-title">
+          Around the World
+        </div>
 
-    <!-- 2010: Iceland -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Iceland</h2>
-        <p class="trip-meta">2010</p>
-      </div>
-      <p class="trip-notes">Returning to Iceland is not “repeating a trip.” It’s called having taste.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Iceland 2010 1.JPG" alt="Iceland 2010 1">
-          <figcaption>Blue Lagoon, Iceland</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Iceland 2010 2.JPG" alt="Iceland 2010 2">
-          <figcaption>Blue Lagoon, Iceland.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Iceland 2010 3.JPG" alt="Iceland 2010 3">
-          <figcaption>View of a glacier from the plane</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Iceland 2010 4.jpg" alt="Iceland 2010 4">
-          <figcaption>One of many waterfalls in Iceland, Seljalandsfos. It was a little windy.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Iceland 2010 5.JPG" alt="Iceland 2010 5">
-          <figcaption>Skogafoss, Iceland</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Iceland 2010 6.JPG" alt="Iceland 2010 6">
-          <figcaption>Black sand beaches of Southern Iceland</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Iceland 2010 7.JPG" alt="Iceland 2010 7">
-          <figcaption>The church where I was married a few years later in Vik, Iceland. Don't get married there. It must be cursed.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Iceland 2010 8.jpg" alt="Iceland 2010 8">
-          <figcaption>Road to everywhere</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Iceland 2010 9.JPG" alt="Iceland 2010 9">
-          <figcaption>Icelandic horses enjoying a sunny day</figcaption>
-        </figure>
-      </div>
-    </section>
+        <div class="stat-text">
+          Countries, cities, islands and places I didn't expect to love.
+        </div>
 
-    <!-- 2012: Seattle -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Seattle, Washington</h2>
-        <p class="trip-meta">2012</p>
       </div>
-      <p class="trip-notes">Coffee, moody skies, and a city that looks like it listens to indie music on purpose.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Seattle1.JPG" alt="Seattle 1">
-          <figcaption>Pier 57 in Seattle, Washington</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Seattle2.JPG" alt="Seattle 2">
-          <figcaption>Space Needle.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Seattle3.JPG" alt="Seattle 3">
-          <figcaption>Seattle sunset.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Seattle4.JPG" alt="Seattle 4">
-          <figcaption>Seattle</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Seattle5.JPG" alt="Seattle 5">
-          <figcaption>View from the Space Needle</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Seattle6.JPG" alt="Seattle 6">
-          <figcaption>Chihuly Garden and Glass Museum. The glass artwork in impressive. Must see if you are ever in Seattle.</figcaption>
-        </figure>
-      </div>
-    </section>
 
-    <!-- 2014: Yellowstone + Grand Teton -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Yellowstone & Grand Teton National Parks</h2>
-        <p class="trip-meta">Wyoming • 2014</p>
-      </div>
-      <p class="trip-notes">Wild, massive, and humbling. Also: animals do not care about your plans.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Yellowstone 1.jpg" alt="Yellowstone 1">
-          <figcaption>Yellowstone National Park tour bus that the driver allowed me to jump in and take a photo because I am a dork.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Yellowstone 2.JPG" alt="Yellowstone 2">
-          <figcaption>Old Faithful doing its thing</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Yellowstone 3.JPG" alt="Yellowstone 3">
-          <figcaption>The biggest bison I saw the entire trip. His head was the size of a VW bug.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Grand Teton 1.jpg" alt="Grand Teton 1">
-          <figcaption>Teton mountain range from Jackson Lake</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Grand Teton 2.JPG" alt="Grand Teton 2">
-          <figcaption>Mormon Row, Grand Teton National Park.</figcaption>
-        </figure>
-      </div>
-    </section>
 
-    <!-- Glacier -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Glacier National Park</h2>
-        <p class="trip-meta">Montana • 2014</p>
-      </div>
-      <p class="trip-notes">The most beautiful place I have ever visited</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Glacier 1.JPG" alt="Glacier 1">
-          <figcaption>Some horses enjoying the gorgeous August weather</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Glacier 2.JPG" alt="Glacier 2">
-          <figcaption>Outside of Many Glacier Lodge. Should be named Many Bear! We heard the park rangers yelling at tourists to get away from the bears.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Glacier 3.JPG" alt="Glacier 3">
-          <figcaption>Mountain goats at Logan Pass.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Glacier 4.JPG" alt="Glacier 4">
-          <figcaption>View from Going to the Sun Road</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Glacier 5.JPG" alt="Glacier 5">
-          <figcaption>Polebridge, Montana</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Glacier 6.JPG" alt="Glacier 6">
-          <figcaption>Fawn in Polebridge.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Glacier 7.jpg" alt="Glacier 7">
-          <figcaption>Wondering if I should cool off by taking a dip in Flathead River. I did and almost died of hypothermia. That may be a slight exaggeration, but it was very cold..</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Glacier 8.jpg" alt="Glacier 8">
-          <figcaption>I just liked this view</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Glacier 9.jpg" alt="Glacier 9">
-          <figcaption>Me and the 'rents</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Glacier 10.jpg" alt="Glacier 10">
-          <figcaption>Lake McDonald at Glacier National Park</figcaption>
-        </figure>
-      </div>
-    </section>
+      <div class="stat">
 
-    <!-- 2023: Jackson Hole -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Jackson Hole, Wyoming</h2>
-        <p class="trip-meta">2023</p>
-      </div>
-      <p class="trip-notes">Mountain town energy: cozy, bold, and slightly too pretty to be legal.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Jackson Hole 1.jpg" alt="Jackson Hole 1">
-          <figcaption>Mountain view from the top of Rendezvous Mountain. No, I did not hike it. I rode the tram.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Jackson Hole 2.jpg" alt="Jackson Hole 2">
-          <figcaption>View from outside Jackson Hole Mountain Resort</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Jackson Hole 3.jpg" alt="Jackson Hole 3">
-          <figcaption>River float down the Snake River in Grand Teton Mountain Range</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Jackson Hole 4.jpg" alt="Jackson Hole 4">
-          <figcaption>More views from the Snake River float</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Jackson Hole 5.jpg" alt="Jackson Hole 5">
-          <figcaption>I mean....breath taking</figcaption>
-        </figure>
-      </div>
-    </section>
+        <i class="fa-solid fa-ship"></i>
 
-    <!-- California (PCH Road Trip) -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Pacific Coast Highway Road Trip</h2>
-        <p class="trip-meta">California • 2024</p>
-      </div>
-      <p class="trip-notes">Ocean on one side, cliffs on the other, and me acting like the main character. Driving the Pacific Coast Highway solo from San Francisco to San Diego. This was one of my first big solo trips and it was wonderful.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/California 2024 1.jpg" alt="California 2024 1">
-          <figcaption>Golden Gate Bridge</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/California 2024 2.jpg" alt="California 2024 2">
-          <figcaption>Approaching Alcatraz</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/California 2024 3.jpg" alt="California 2024 3">
-          <figcaption>Sunset over Golden Gate Bridge</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/California 2024 4.jpg" alt="California 2024 4">
-          <figcaption>Monterey, California</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/California 2024 5.jpg" alt="California 2024 5">
-          <figcaption>Lone Cypress, 17 Mile Drive, Monterey</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/California 2024 6.jpg" alt="California 2024 6">
-          <figcaption>Just some kids sunbathing in San Diego Bay</figcaption>
-        </figure>
-      </div>
-    </section>
+        <div class="stat-title">
+          By Land & Sea
+        </div>
 
-    <!-- Colorado (2025) -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Colorado</h2>
-        <p class="trip-meta">2025</p>
-      </div>
-      <p class="trip-notes">High altitude, high vibes and great beer.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Colorado 2025 1.jpg" alt="Colorado 1">
-          <figcaption>Rocky Mountains</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Colorado 2025 2.jpg" alt="Colorado 2">
-          <figcaption>View from Pike's Peak. I was at 14,115 ft and felt sick. Altitude sickness is real!</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Colorado 2025 3.jpg" alt="Colorado 3">
-          <figcaption>Rocky Mountain National Park</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Colorado 2025 4.jpg" alt="Colorado 4">
-          <figcaption>Cute deer and Black Canyon of the Gunnison National Park</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Colorado 2025 5.jpg" alt="Colorado 5">
-          <figcaption>Mesa Verde National Park. Wonder what the cost of rent is in one of those abodes?</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Colorado 2025 6.jpg" alt="Colorado 6">
-          <figcaption>Getting great use of my annual National Parks pass. I hit all 4 National Parks in Colorado</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Colorado 2025 7.jpg" alt="Colorado 7">
-          <figcaption>Great Sand Dunes National Park. That was a weird landscape. A beach, without the ocean, at the foothills of a mountain range.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Colorado 2025 8.jpg" alt="Colorado 8">
-          <figcaption>Living my best life</figcaption>
-        </figure>
-      </div>
-    </section>
+        <div class="stat-text">
+          Cruise ships, planes, trains, buses, cars and occasionally my own two feet.
+        </div>
 
-    <!-- New Mexico (2025) -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">New Mexico</h2>
-        <p class="trip-meta">2025</p>
       </div>
-      <p class="trip-notes">Desert skies and that “why don’t I come here more?” feeling.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/New Mexico 2025 1.jpg" alt="New Mexico 1">
-          <figcaption>White water rafting down the Rio Grande</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/New Mexico 2025 2.jpg" alt="New Mexico 2">
-          <figcaption>Petroglyph on the bank of the Rio Grande.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/New Mexico 2025 3.jpg" alt="New Mexico 3">
-          <figcaption>Me and Heather having too much fun with our rafting guide. His jokes were pretty bad.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/New Mexico 2025 4.jpg" alt="New Mexico 4">
-          <figcaption>Quiet float after the rain</figcaption>
-        </figure>
-      </div>
-    </section>
 
-    <!-- Mediterranean Cruise -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Mediterranean Cruise</h2>
-        <p class="trip-meta">Europe • 2025</p>
-      </div>
-      <p class="trip-notes">The Mediterranean is basically paradise. Great weather, warm and clear waters, amazing food and great looking, friendly locals..</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Mediterrean Cruise 2025 1.jpg" alt="Mediterranean 1">
-          <figcaption>The Acropolis</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Mediterrean Cruise 2025 2.jpg" alt="Mediterranean 2">
-          <figcaption>Prosecco on the Sea View deck</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Mediterrean Cruise 2025 3.jpg" alt="Mediterranean 3">
-          <figcaption>Mykonos, Greece</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Mediterrean Cruise 2025 4.jpg" alt="Mediterranean 4">
-          <figcaption>Instanbul,Turkey</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Mediterrean Cruise 2025 5.jpg" alt="Mediterranean 5">
-          <figcaption>Istanbul, Turkey</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Mediterrean Cruise 2025 6.jpg" alt="Mediterranean 6">
-          <figcaption>Paleokastritsa, Greece</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Mediterrean Cruise 2025 7.jpg" alt="Mediterranean 7">
-          <figcaption>Overlooking Korcula, Croatia. It was 95 degrees, humid and I was sure I was going to die on the hike to this viewpoint. I survived and it was worth every bead of sweat.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Mediterrean Cruise 2025 8.jpg" alt="Mediterranean 8">
-          <figcaption>Some random island in Croatia</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Mediterrean Cruise 2025 9.jpg" alt="Mediterranean 9">
-          <figcaption>Found my new friend, Fawna, on this random island as well. We met on the cruise ship as solo travelers. What a great day.</figcaption>
-        </figure>
-      </div>
-    </section>
 
-    <!-- Oregon (Bend) -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Bend, Oregon</h2>
-        <p class="trip-meta">2025</p>
+      <div class="stat">
+
+        <i class="fa-solid fa-binoculars"></i>
+
+        <div class="stat-title">
+          Always Looking
+        </div>
+
+        <div class="stat-text">
+          Wildlife, landscapes, culture and the people I meet along the way.
+        </div>
+
       </div>
-      <p class="trip-notes">Mountains, rivers, and that crisp “I could restart my life here” energy.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Oregon2.jpg" alt="Oregon 2">
-          <figcaption>Lava Lands, Bend Oregon.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Oregon3.jpg" alt="Oregon 3">
-          <figcaption>Crater Lake National Park</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Oregon4.jpg" alt="Oregon 4">
-          <figcaption>Road to everywhere</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Oregon5.jpg" alt="Oregon 5">
-          <figcaption>Evening glow at Elk Lake</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Oregon6.jpg" alt="Oregon 6">
-          <figcaption>Nightime Canoe trip under the stars. Photo credit to Danielle G.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Oregon7.jpg" alt="Oregon 7">
-          <figcaption>Night sky at Elk Lake. Photo credit to Scott M.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Oregon8.jpg" alt="Oregon 8">
-          <figcaption>Me looking cute AF at Crater Lake National Park</figcaption>
-        </figure>
-      </div>
-    </section>
 
-    <!-- Bahamas & Caribbean -->
-    <section class="trip">
-      <div class="trip-header">
-        <h2 class="trip-title">Bahamas & Caribbean Cruise</h2>
-        <p class="trip-meta">2025</p>
-      </div>
-      <p class="trip-notes">Warm water, bright skies, and the kind of relaxation you can’t fake in a spreadsheet.</p>
-      <div class="gallery">
-        <figure>
-          <img src="images/journeys/Bahamas 2025 1.jpg" alt="Bahamas 2025 1">
-          <figcaption>Sea turtles in Nassau, Bahamas</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Bahamas 2025 2.jpg" alt="Bahamas 2025 2">
-          <figcaption>The cutest one!</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Bahama 2025 3.jpg" alt="Bahamas 2025 3">
-          <figcaption>Me, in my usual spot on the Sea View Deck of any Holland America ship. This was the Eurodam.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Bahama 2025 4.jpg" alt="Bahama 2025 4">
-          <figcaption>Sunset somwhere in the Bahamas</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Bahama 2025 5.jpg" alt="Bahama 2025 5">
-          <figcaption>Ocho Rios, Jamaica</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Bahama 2025 6.jpg" alt="Bahama 2025 6">
-          <figcaption>Rainbow</figcaption>
-        </figure>
-        <figure>
-          <img src="images/journeys/Bahama 2025 7.png" alt="Bahama 2025 7">
-          <figcaption>Ocho Rios, Jamaica</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- SOCIAL -->
-    <div class="social-section">
-      <div class="social-title">Follow me on social</div>
-
-      <div class="social-icons">
-        <a class="facebook" href="https://www.facebook.com/jellyuntethered" target="_blank" aria-label="Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-
-        <a class="instagram" href="https://www.instagram.com/jelly_untethered" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-
-        <a class="tiktok" href="https://www.tiktok.com/@jelly_untethered" target="_blank" aria-label="TikTok">
-          <i class="fab fa-tiktok"></i>
-        </a>
-
-        <a class="youtube" href="https://www.youtube.com/@jelly_untethered" target="_blank" aria-label="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
-      </div>
     </div>
+
+
+    <!-- CONTINENTS -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        Across the Map
+      </h2>
+
+      <div class="section-subtitle">
+        The list keeps growing. That's rather the point.
+      </div>
+
+      <div class="continents">
+
+        <div class="continent">
+          🌎 North America
+        </div>
+
+        <div class="continent">
+          🌍 Europe
+        </div>
+
+        <div class="continent">
+          🌏 Asia
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAVORITE ADVENTURES -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        A Few Memorable Adventures
+      </h2>
+
+      <div class="section-subtitle">
+        Not a complete list. Just some places and experiences
+        that earned permanent space in my memory.
+      </div>
+
+
+      <div class="highlights">
+
+        <div class="highlight">
+          Alaska
+        </div>
+
+        <div class="highlight">
+          Glacier Bay
+        </div>
+
+        <div class="highlight">
+          Denali
+        </div>
+
+        <div class="highlight">
+          Iceland
+        </div>
+
+        <div class="highlight">
+          Mediterranean
+        </div>
+
+        <div class="highlight">
+          Panama Canal
+        </div>
+
+        <div class="highlight">
+          British Isles
+        </div>
+
+        <div class="highlight">
+          Scandinavia
+        </div>
+
+        <div class="highlight">
+          Armenia
+        </div>
+
+        <div class="highlight">
+          Pacific Coast Highway
+        </div>
+
+        <div class="highlight">
+          Yellowstone
+        </div>
+
+        <div class="highlight">
+          Glacier National Park
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        A Few Views Along the Way
+      </h2>
+
+      <div class="section-subtitle">
+        Because sometimes a picture does a better job than another paragraph.
+      </div>
+
+
+      <div class="gallery">
+
+
+        <figure>
+
+          <img
+            src="images/journeys/Glacier 4.JPG"
+            alt="Glacier National Park"
+          >
+
+          <figcaption>
+            Glacier National Park
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            src="images/journeys/Iceland 2010 6.JPG"
+            alt="Black sand beach in Iceland"
+          >
+
+          <figcaption>
+            Iceland
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            src="images/journeys/Mediterrean Cruise 2025 3.jpg"
+            alt="Mykonos Greece"
+          >
+
+          <figcaption>
+            Mykonos, Greece
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            src="images/journeys/California 2024 3.jpg"
+            alt="Golden Gate Bridge"
+          >
+
+          <figcaption>
+            California
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            src="images/journeys/Yellowstone 3.JPG"
+            alt="Bison in Yellowstone"
+          >
+
+          <figcaption>
+            Yellowstone National Park
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            src="images/journeys/Grand Teton 1.jpg"
+            alt="Grand Teton National Park"
+          >
+
+          <figcaption>
+            Grand Teton National Park
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            src="images/journeys/Colorado 2025 3.jpg"
+            alt="Rocky Mountain National Park"
+          >
+
+          <figcaption>
+            Rocky Mountain National Park
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            src="images/journeys/Oregon3.jpg"
+            alt="Crater Lake National Park"
+          >
+
+          <figcaption>
+            Crater Lake National Park
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            src="images/journeys/Bahamas 2025 1.jpg"
+            alt="Sea turtles in the Bahamas"
+          >
+
+          <figcaption>
+            Bahamas
+          </figcaption>
+
+        </figure>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- FOLLOW -->
+
+    <div class="follow-card">
+
+      <h2>
+        The Journey Is Still Happening
+      </h2>
+
+      <p>
+        This page is the highlight reel. The daily version is considerably
+        less organized. I share where I am, what I'm doing, the people I meet,
+        wildlife encounters, cruise life, mishaps and everything in between
+        on social media.
+      </p>
+
+      <a
+        href="follow.html"
+        class="follow-button"
+      >
+        Follow the Daily Journey →
+      </a>
+
+    </div>
+
+
+    <!-- SOCIAL ICONS -->
+
+    <div class="social-icons">
+
+      <a
+        class="facebook"
+        href="https://www.facebook.com/jellyuntethered"
+        target="_blank"
+        aria-label="Facebook"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a
+        class="instagram"
+        href="https://www.instagram.com/jelly_untethered/"
+        target="_blank"
+        aria-label="Instagram"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a
+        class="tiktok"
+        href="https://www.tiktok.com/@jelly_untethered"
+        target="_blank"
+        aria-label="TikTok"
+      >
+        <i class="fab fa-tiktok"></i>
+      </a>
+
+      <a
+        class="youtube"
+        href="https://www.youtube.com/@jelly_untethered"
+        target="_blank"
+        aria-label="YouTube"
+      >
+        <i class="fab fa-youtube"></i>
+      </a>
+
+    </div>
+
+
+    <!-- FOOTER -->
 
     <div class="footer-note">
-      More to come!
+
+      Still untethered. Still wandering.
+
+      <div class="footer-categories">
+        TRAVEL • CRUISES • WILDLIFE • CULTURE • SARCASM • HUMOR
+      </div>
+
     </div>
 
+
   </div>
+
 </body>
 </html>
