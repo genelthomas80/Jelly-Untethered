@@ -10,229 +10,607 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
-      color: #333;
+
+      color: #092f55;
+
       text-align: center;
-      padding: 50px 20px;
+
+      padding: 35px 20px 50px;
       margin: 0;
+
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 5% 10%,
+          rgba(42, 157, 190, 0.25),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 95% 20%,
+          rgba(245, 181, 27, 0.14),
+          transparent 27%
+        ),
+
+        radial-gradient(
+          circle at 90% 85%,
+          rgba(232, 120, 34, 0.22),
+          transparent 33%
+        ),
+
+        linear-gradient(
+          180deg,
+          #fff9eb 0%,
+          #f7ecd5 48%,
+          #fff8e9 100%
+        );
+
+      background-attachment: fixed;
     }
+
+
+    /* MAIN CONTAINER */
 
     .container {
       max-width: 900px;
       margin: 0 auto;
     }
 
-    /* NAV */
-    nav{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
+
+    /* NAVIGATION */
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
       gap: 10px;
+
       margin-bottom: 30px;
     }
 
-    nav a{
-      padding: 10px 14px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid #e5e7eb;
+    nav a {
+      padding: 10px 16px;
+
+      background: rgba(255,255,255,0.88);
+
+      border: 1px solid rgba(9,47,85,0.15);
+
       border-radius: 999px;
-      text-decoration:none;
-      color: #111827;
+
+      text-decoration: none;
+
+      color: #092f55;
+
       font-weight: 700;
       font-size: 0.95em;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-      transition: transform 0.15s ease, opacity 0.15s ease;
+
+      box-shadow:
+        0 5px 14px rgba(9,47,85,0.08);
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        color 0.15s ease;
     }
 
-    nav a:hover{
-      transform: translateY(-1px);
-      opacity: 0.92;
-    }
+    nav a:hover {
+      transform: translateY(-2px);
 
-    nav a.active{
-      background: #111827;
+      background: #e87822;
+
       color: #ffffff;
-      border-color: #111827;
     }
 
-    img {
-      max-width: 260px;
-      margin-bottom: 28px;
+    nav a.active {
+      background: #092f55;
+
+      color: #ffffff;
+
+      border-color: #092f55;
     }
+
+
+    /* LOGO */
+
+    .logo {
+      max-width: 290px;
+      width: 75%;
+
+      margin: 5px auto 20px;
+
+      display: block;
+    }
+
+
+    /* MAIN TITLE */
 
     h1 {
       font-size: 2.7em;
+
       margin: 0;
+
       letter-spacing: 0.5px;
+
+      color: #092f55;
     }
+
+
+    /* GOLD ACCENT */
+
+    .gold-line {
+      width: 85px;
+
+      height: 4px;
+
+      margin: 14px auto 18px;
+
+      background: #f5b51b;
+
+      border-radius: 5px;
+    }
+
+
+    /* TAGLINE */
 
     .tagline {
       font-size: 1.25em;
-      margin-top: 14px;
+
+      margin-top: 10px;
       margin-bottom: 8px;
+
+      font-weight: 600;
+
+      color: #174f70;
     }
 
+
+    /* INTRO TEXT */
+
     .subtext {
-      margin-top: 10px;
-      color: #555;
+      margin-top: 12px;
+
+      color: #465d6e;
+
       font-size: 1.05em;
-      line-height: 1.6;
+
+      line-height: 1.7;
+
       max-width: 680px;
+
       margin-left: auto;
       margin-right: auto;
     }
 
-    hr {
-      margin: 38px auto 26px;
-      width: 70px;
-      border: none;
-      height: 4px;
-      background: #ddd;
-      border-radius: 3px;
+
+    /* TRAVEL DIVIDER */
+
+    .travel-divider {
+      margin: 30px auto 20px;
+
+      color: #e87822;
+
+      font-size: 23px;
+
+      letter-spacing: 10px;
     }
 
-    /* UPCOMING PREVIEW */
+
+    /* UPCOMING TRIP CARD */
+
     .preview {
-      background: rgba(255,255,255,0.85);
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 24px;
-      margin: 28px auto;
+      background: rgba(255,255,255,0.88);
+
+      border: 1px solid rgba(9,47,85,0.12);
+
+      border-radius: 20px;
+
+      padding: 28px 25px;
+
+      margin: 25px auto 35px;
+
       max-width: 720px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+
+      box-shadow:
+        0 10px 28px rgba(9,47,85,0.10);
+
+      backdrop-filter: blur(3px);
     }
 
     .preview h2 {
       margin-top: 0;
-      font-size: 1.4em;
+
+      margin-bottom: 10px;
+
+      font-size: 1.5em;
+
+      color: #092f55;
+    }
+
+    .preview h2 i {
+      color: #e87822;
+
+      margin-right: 7px;
     }
 
     .preview p {
-      color: #555;
-      line-height: 1.6;
-      margin-bottom: 18px;
+      color: #536675;
+
+      line-height: 1.65;
+
+      margin-bottom: 20px;
     }
 
     .preview a {
       display: inline-block;
-      padding: 10px 18px;
+
+      padding: 11px 21px;
+
       border-radius: 999px;
-      background: #111827;
-      color: #fff;
+
+      background: #092f55;
+
+      color: #ffffff;
+
       text-decoration: none;
+
       font-weight: 700;
+
       font-size: 0.95em;
-      transition: transform 0.15s ease, opacity 0.15s ease;
+
+      box-shadow:
+        0 5px 12px rgba(9,47,85,0.18);
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease;
     }
 
     .preview a:hover {
-      transform: translateY(-1px);
-      opacity: 0.9;
+      transform: translateY(-2px);
+
+      background: #e87822;
     }
 
-    /* SOCIAL */
+
+    /* SOCIAL SECTION */
+
     .social-title {
-      font-size: 1.15em;
+      font-size: 1.2em;
+
       font-weight: bold;
-      margin-top: 10px;
+
+      color: #092f55;
+
+      margin-top: 5px;
     }
 
     .social-icons {
-      margin-top: 15px;
+      margin-top: 18px;
     }
 
     .social-icons a {
-      display: inline-block;
-      margin: 0 12px;
-      font-size: 34px;
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 52px;
+      height: 52px;
+
+      margin: 0 6px;
+
+      font-size: 28px;
+
       text-decoration: none;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+
+      background: rgba(255,255,255,0.88);
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 5px 14px rgba(9,47,85,0.12);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .social-icons a:hover {
-      transform: scale(1.15);
-      opacity: 0.85;
+      transform: translateY(-3px) scale(1.07);
+
+      box-shadow:
+        0 8px 18px rgba(9,47,85,0.18);
     }
 
-    .facebook { color: #1877f2; }
-    .instagram { color: #e1306c; }
-    .tiktok { color: #000000; }
-    .youtube { color: #ff0000; }
+
+    /* SOCIAL COLORS */
+
+    .facebook {
+      color: #1877f2;
+    }
+
+    .instagram {
+      color: #e1306c;
+    }
+
+    .tiktok {
+      color: #111111;
+    }
+
+    .youtube {
+      color: #ff0000;
+    }
+
+
+    /* FOOTER */
 
     .footer-note {
       margin-top: 35px;
+
+      padding-top: 22px;
+
+      border-top: 1px solid rgba(9,47,85,0.12);
+
       font-size: 0.95em;
-      color: #777;
+
+      color: #667785;
+
       line-height: 1.6;
     }
+
+    .footer-categories {
+      margin-top: 7px;
+
+      color: #092f55;
+
+      font-size: 0.78em;
+
+      font-weight: bold;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 22px 14px 40px;
+
+        background-attachment: scroll;
+      }
+
+      nav {
+        gap: 7px;
+
+        margin-bottom: 23px;
+      }
+
+      nav a {
+        padding: 8px 11px;
+
+        font-size: 0.83em;
+      }
+
+      .logo {
+        width: 72%;
+
+        max-width: 250px;
+      }
+
+      h1 {
+        font-size: 2.15em;
+      }
+
+      .tagline {
+        font-size: 1.08em;
+      }
+
+      .subtext {
+        font-size: 0.98em;
+      }
+
+      .preview {
+        padding: 23px 18px;
+      }
+
+      .social-icons a {
+        width: 48px;
+        height: 48px;
+
+        font-size: 25px;
+
+        margin: 0 4px;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
+
   <div class="container">
 
-    <!-- NAV -->
+
+    <!-- NAVIGATION -->
+
     <nav>
-      <a class="active" href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="journeys.html">Journeys</a>
-      <a href="upcoming.html">Upcoming</a>
-      <a href="merch.html">Merch</a>
-      <a href="support.html">Support</a>
-      <a href="follow.html">Follow</a>
+
+      <a class="active" href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About Me
+      </a>
+
+      <a href="journeys.html">
+        Journeys
+      </a>
+
+      <a href="upcoming.html">
+        Upcoming
+      </a>
+
+      <a href="merch.html">
+        Merch
+      </a>
+
+      <a href="support.html">
+        Support
+      </a>
+
+      <a href="follow.html">
+        Follow
+      </a>
+
     </nav>
 
-    <img src="logo.png" alt="Jelly Untethered logo">
 
-    <h1>Jelly Untethered</h1>
+    <!-- LOGO -->
+
+    <img
+      src="logo.png"
+      alt="Jelly Untethered logo"
+      class="logo"
+    >
+
+
+    <!-- TITLE -->
+
+    <h1>
+      Jelly Untethered
+    </h1>
+
+    <div class="gold-line"></div>
+
+
+    <!-- TAGLINE -->
 
     <div class="tagline">
       Solo travel. Ships, trains, planes, and whatever gets me there.
     </div>
 
+
+    <!-- INTRO -->
+
     <div class="subtext">
-      Jelly Untethered is about movement, freedom, and choosing the road less planned.
-      Sometimes life throws curveballs. Sometimes you book a lot of travel instead.
+
+      Jelly Untethered is about movement, freedom,
+      and choosing the road less planned.
+
+      Sometimes life throws curveballs.
+      Sometimes you book a lot of travel instead.
+
     </div>
 
-    <hr>
 
-    <!-- UPCOMING PREVIEW -->
+    <!-- TRAVEL DIVIDER -->
+
+    <div class="travel-divider">
+      ✈︎ ⚓︎
+    </div>
+
+
+    <!-- UPCOMING -->
+
     <div class="preview">
-      <h2>Coming Up Next</h2>
+
+      <h2>
+        <i class="fa-solid fa-compass"></i>
+        Coming Up Next
+      </h2>
+
       <p>
-        2026 is stacked. From the Caribbean to Alaska to Europe and beyond,
-        these are the journeys already on the calendar.
+        2026 is stacked. From the Caribbean to Alaska
+        to Europe and beyond, these are the journeys
+        already on the calendar.
       </p>
-      <a href="upcoming.html">View Upcoming Trips</a>
-    </div>
 
-    <div class="social-title">Follow me on social</div>
-
-    <div class="social-icons">
-      <a class="facebook" href="https://www.facebook.com/jellyuntethered" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook"></i>
+      <a href="upcoming.html">
+        View Upcoming Trips →
       </a>
 
-      <a class="instagram" href="https://www.instagram.com/jelly_untethered" target="_blank" aria-label="Instagram">
+    </div>
+
+
+    <!-- SOCIAL -->
+
+    <div class="social-title">
+      Follow the journey
+    </div>
+
+
+    <div class="social-icons">
+
+      <a
+        class="facebook"
+        href="https://www.facebook.com/jellyuntethered"
+        target="_blank"
+        aria-label="Facebook"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+
+      <a
+        class="instagram"
+        href="https://www.instagram.com/jelly_untethered"
+        target="_blank"
+        aria-label="Instagram"
+      >
         <i class="fab fa-instagram"></i>
       </a>
 
-      <a class="tiktok" href="https://www.tiktok.com/@jelly_untethered" target="_blank" aria-label="TikTok">
+
+      <a
+        class="tiktok"
+        href="https://www.tiktok.com/@jelly_untethered"
+        target="_blank"
+        aria-label="TikTok"
+      >
         <i class="fab fa-tiktok"></i>
       </a>
 
-      <a class="youtube" href="https://www.youtube.com/@jelly_untethered" target="_blank" aria-label="YouTube">
+
+      <a
+        class="youtube"
+        href="https://www.youtube.com/@jelly_untethered"
+        target="_blank"
+        aria-label="YouTube"
+      >
         <i class="fab fa-youtube"></i>
       </a>
+
     </div>
+
+
+    <!-- FOOTER -->
 
     <div class="footer-note">
+
       Currently untethering. More stories soon.
+
+      <div class="footer-categories">
+        TRAVEL • CRUISES • WILDLIFE • CULTURE • SARCASM • HUMOR
+      </div>
+
     </div>
 
+
   </div>
+
 </body>
 </html>
